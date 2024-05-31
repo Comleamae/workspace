@@ -1,0 +1,11 @@
+  <script>
+    document.querySelectorAll('a').forEach((element, i) => {
+      element.addEventListener('click', (e) => {
+        document.querySelectorAll('a').forEach((a_tag, idx) => {
+          a_tag.classList.remove('show');
+        });
+        e.target.classList.add('show');
+
+      });
+    });
+  </script>

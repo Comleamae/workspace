@@ -32,5 +32,7 @@ public class 연습문제_0530 {
         System.out.println("수학 점수 = " + maNum);
         System.out.println("총점 = " + totNum);
         System.out.println("평균 = " + rNum);
+
+        System.out.println();
     }
 }
