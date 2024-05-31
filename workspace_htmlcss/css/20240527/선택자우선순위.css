@@ -1,0 +1,21 @@
+/*  태그 선택자(div)
+    아이디 선택자
+    클래스 선택자(.div) */
+/* inline style->css코드를 style 값을 통해 hmtl코드에 넣는것
+   */
+.p1{
+  color: red;
+  background-color: black;
+}
+/* 중복될 경우 태그선택자보다 클래스 선택자가 우선 순위가 높다 */
+div{
+  color: aqua !important;
+  background-color: blueviolet;
+}
+.d1{
+  color: blue;
+}
+
+#d1{
+  color: red;
+}

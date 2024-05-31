@@ -1,0 +1,39 @@
+/* *->에스테리스크=모든 전부, &->엠퍼센트, |->버티컬바,  */
+.container{
+  width: 100vw;
+  background-color: #006769;
+  padding: 16px;
+  text-align: center;
+}
+.header{
+  background-color: #FAEE5A;
+  height: 100px;
+  width: 100%;
+  line-height: 100px;
+}
+.main{
+  background-color: black;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.main > div{
+  height: 200px;
+  
+}
+.main > div:nth-child(1){
+  width: 20%;
+  background-color: #4B89AC;
+  float: left;
+}
+.main > div:nth-child(2){
+  width: 80%;
+  background-color: #E4FCF9;
+  float: left;
+}
+
+.footer{
+  width: 100%;
+  height: 100px;
+  background-color: blueviolet;
+}

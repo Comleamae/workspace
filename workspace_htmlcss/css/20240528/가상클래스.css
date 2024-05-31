@@ -1,0 +1,80 @@
+.container1{
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+}
+.container1>div{
+  width: 80px;
+  height: 80px;
+  background-color: crimson;
+  border: 1px solid black;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 변환:전체 1초 동안 */
+  transition: all 1s;
+}
+/* hover->선택자에 마우스를 올리면 발생 */
+.d1:hover{
+  width: 120px;
+  height: 120px;  
+  
+}
+.d2:hover{
+  background-color: black;
+  color: gold;
+}
+.d3:hover{
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+/* --------------------- */
+input{
+  margin-left: 30px;
+  width: 200px;
+   /* heigth 대신 사용 */
+  padding: 10px 4px;
+  border: 1px solid lightgreen;
+  border-radius: 8px;
+  /* input, button태그에 존재 */
+  outline: none; 
+  transition: all 1s;
+}
+/* focus:클릭 시 변화 */
+input:focus{
+  width: 300px;
+  border: 1.5px solid green
+}
+/* -------------------------------- */
+ul{
+  margin-left: 30px;
+}
+/* before-선택자 앞에 인라인 요소 추가 */
+.li-1:before{
+  content: "new";
+  color: white;
+  background-color: blue;
+  border-radius: 6px;
+  padding: 2px 6px;
+  margin-right: 6px;
+}
+/* after-선택자 뒤에 인라인 요소 추가 */
+.li-1:after{
+  content: "css";
+  background-color: black;
+  color: red;
+  padding: 2px 6px;
+  margin-right: 6px;
+}
+
+img{
+  border: 1px solid black;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+}

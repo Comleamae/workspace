@@ -1,0 +1,33 @@
+
+.header{
+  border: 5px solid greenyellow;
+  background-color: green;
+  height: 150px;
+  text-align: center;
+}
+.menu_a{
+  border: 5px solid greenyellow;
+  background-color: aqua;
+  text-align: center;
+}
+.menu_b{
+  border: 5px solid greenyellow;
+  background-color: blue;
+  height: 500px;
+  width: 170px;
+  display: inline-block;
+  text-align: center;
+}
+.content{
+  border: 5px solid greenyellow;
+  background-color: blueviolet;
+  height: 500px;
+  width: 570px;
+  display: inline-block;
+  text-align: center;
+}
+.footer{
+  border: 5px solid greenyellow;
+  background-color: coral;
+  text-align: center;
+}

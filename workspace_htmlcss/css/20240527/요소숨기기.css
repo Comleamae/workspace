@@ -1,0 +1,10 @@
+.img1{
+  /* hidden=숨김 */
+  visibility: visible;
+}
+.img2{
+  /* display: none; */
+}
+.img3{
+  opacity: 0.5;
+}

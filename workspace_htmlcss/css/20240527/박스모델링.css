@@ -1,0 +1,49 @@
+/*
+  태그의 너비는 기본적으로
+  width+padding+border의 합
+ */
+
+.p1{
+  /*border 테두리-> solid 긴선, dotted 둥근 점선, dashed 직선 점선 */
+  border: 3px solid black;
+  /*margin 바깥 여백 */
+  margin: 30px;
+  /*padding 안쪽 여백 */
+  padding: 20px;
+}
+.p2{
+    border: 3px solid crimson;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.p3{
+    border: 3px dotted violet;
+    /* margin or padding: 상 우 하 좌 top right bottom left*/
+    padding: 5px 10px 15px 20px;
+    /* margin or padding: 상하값 좌우값*/
+    margin: 50px 20px;
+}
+
+.p4{
+  /* 높이 너비 ->조절한다고 하여 고유 영역은 침해 받지 않음 */
+  border: 1px solid black;
+  /* 너비 */
+  width: 250px;
+  /* 높이 */
+  height: 150px;
+}
+
+.a1{
+  border: 1px solid black;
+  width: 100px;
+  /* 작동하지 않는 코드 */
+  height: 100px;
+  /* 작동하지 않는 코드 */
+  margin: 50px 50px;
+  /* 좌우만 작용 */
+}

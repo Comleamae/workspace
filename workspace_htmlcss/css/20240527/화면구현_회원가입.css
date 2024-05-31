@@ -1,0 +1,42 @@
+span{
+  color: red;
+}
+tr > td:first-child{
+  background-color: rgb(244, 182, 238) ;
+}
+tr > td:nth-child(2){
+  background-color: rgb(198, 208, 216);
+}
+.main-a{
+  font-size: 30px;
+  margin: 30px;
+}
+.main-b{
+  font-size: 25px;
+  margin: 30px;
+}
+.main-c{
+  font-size: 25px;
+  margin: 30px;
+}
+.sub-s tr td{
+  border: 1px solid black;
+}
+.right-s{
+  font-size: 20px;
+  text-align: right;
+}
+table, tr, td{
+  border:1px solid black;
+}
+table{
+  border-collapse;
+}
+
+.bord{
+  font-size: 1.1rem;
+}
+
+select{
+  width: 150px;
+}

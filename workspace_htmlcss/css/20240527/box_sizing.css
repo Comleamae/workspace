@@ -1,0 +1,22 @@
+.container{
+  border: 5px solid red;
+  width: 500px;
+  margin: 20px;
+}
+.inner{
+  font-size: 2rem;
+  border: 5px solid black;
+  width: 500px;
+  padding: 0px 10px;
+}
+/* 박스모델링에서 실제 박스의 크기는
+width+padding값+border값 해결을 위해 박스 사이징을 함 */
+.inner1{
+  /* box-sizing의 기본값 contetn-box */
+  /* content-box 내용만 너비로 취급 */
+  box-sizing: content-box;
+}
+.inner2{
+  /* border-box 테두리까지 너비로 취급 */
+  box-sizing: border-box;
+}

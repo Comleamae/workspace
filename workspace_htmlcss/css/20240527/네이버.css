@@ -1,0 +1,30 @@
+.img-div{
+  background-image: url(배경화면임.jpg);
+  background-size: contain;
+  width: 100vw;
+  height: 100vh;
+}
+.search{
+  text-align: center;
+  position: fixed;
+  top: 40vh;
+  left: 50vw;
+  ;
+}
+
+.added_button{
+  border: 20px solid black;
+  position: fixed;
+  top: 60vh;
+  left: 30vw;
+  border-radius: 50%;
+  
+}
+.add_button{
+  border: 20px solid white ;
+  position: relative;
+  top: 60vh;
+  left: +5vw;
+  border-radius: 50%;
+
+}

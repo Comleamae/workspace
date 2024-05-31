@@ -1,0 +1,21 @@
+/* float는 그림과 글을 조합롭게 배치하기위해 나옴 */
+/* float로 인해 부모의 높이 값을 잃어 버리지만 부모에 overflow값을 none으로 설정한다면 해결할 수 있다 */
+.container{
+  width: 700px;
+  border: 3px solid black;
+  margin: auto;
+  padding: 10px;
+  overflow: hidden;
+}
+p{
+  margin-top: 0px;
+  text-align: justify;
+  font-size: 16px;
+  /*line-height: 50px; */
+  /* 줄간격  */
+}
+img{
+  float: right;
+  /* float->lef or right */
+  
+}

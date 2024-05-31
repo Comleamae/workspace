@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table{
+      border-collapse: collapse;
+      border: 1px solid black;
+      width: 300px;
+      text-align: center;
+    }
+    tr, td{
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+    <!--caption= 제목
+        colgroup,col=표의 넓이 조절
+        thead=표 첫줄 
+        tbody=표 내용
+        tfoot=표 종합정리->마지막위치-->
+    <!--alt+click 같은 내용을 적을 때 유용 -->
+  <!-- table 태그 안에는 thead, tbody, tfoot, tr, caption, colgroup 태그만 올 수 있다 -->
+  <!-- ctrl+space=가능한 명령어 나열 -->
+  <table>
+    <colgroup>
+      <col widith="50%">     
+      <col widith="20%">
+      <col widith="*">
+    </colgroup>
+    <caption>학생 정보</caption>
+  <thead>
+    <tr>
+      <td>이름</td>
+      <td>나이</td>
+      <td>점수</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>김길동</td>
+      <td>20</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>임꺽정</td>
+      <td>30</td>
+      <td>80</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>평균</td>
+      <td>25</td>
+      <td>85</td>
+    </tr>
+  </tfoot>
+</table>
+</body>
+</html>

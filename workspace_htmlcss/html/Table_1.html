@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table{
+      border-collapse: collapse;
+      border: 1px solid black;
+      width: 300px;
+      text-align: center;
+    }
+    tr, td{
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <!-- <table> 표를 만들기위한 명령어, <td>열, <tr>행-->
+  <!-- 
+    표 제작은 여러 태그를 동시에 사용해서 만들어 짐
+    제작을 위해서 가장 먼저 table태그를 사용
+    table 태그 안에서 먼저 tr태그를 사용해 행을 만듬
+    tr태그 안에 td태그를 사용해 열을 만든다
+    tr태그 안에는 td태그만 올 수 있다
+   -->
+  <!-- <table border="1"> 요즘엔 사용하지않는 방식-->
+  <!--alt+shift+화살표 아래  -->
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+  </table>
+  <hr>
+  <table>
+    <tr>
+      <!-- rowspan은 열결합 colspan은 행결합 -->
+      <td rowspan="2"><i><b>EmpNo</b></i></td>
+      
+      <td colspan="4"><i><b>Marks</b></i></td>
+    </tr>
+    <tr>
+      <td>Sec A</td>
+      <td>Sec B</td>
+      <td>Sec C</td>
+      <td>Total</td>
+    </tr>
+    <tr>
+      <td>1001</td>
+      <td>45</td>
+      <td>20</td>
+      <td>30</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <td>1002</td>
+      <td>15</td>
+      <td>5</td>
+      <td>10</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>1003</td>
+      <td>40</td>
+      <td>15</td>
+      <td>5</td>
+      <td>65</td>
+    </tr>
+  </table>
+  <hr>
+
+  <!-- 윗첨자 -->
+  1<sup>st</sup> <br>
+  <!-- 아랫첨자 -->
+  H<sub>2</sub>O <br>
+  <table>
+    <tr>
+      <td rowspan="2">a</td>
+      <td colspan="2">b</td>
+    </tr>
+    <tr>
+      <td>c</td>
+      <td rowspan="2">d</td>
+    </tr>
+    <tr>
+      <td colspan="2">e</td>
+    </tr>
+  </table>
+  <hr>
+
+  <table>
+    <tr>
+      <td>Prefix</td>
+      <td>type</td>
+      <td>no of digits</td>
+      <td>2<sup>nd digits</td>
+      <td>Text number</td>
+      <td>Text-number</td>
+      <td>Text digit</td>
+    </tr>
+    <tr>
+      <td rowspan="4">12-14</td>
+      <td rowspan="4">Text-MCCC</td>
+      <td rowspan="4">16</td>
+      <td>1</td>
+      <td>2<sup>nd-3<sup>rd</td>
+      <td rowspan="4">Long text here</td>
+      <td rowspan="4">Text with digits</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>2<sup>nd-4<sup>th</td>
+    </tr>
+    <tr>
+     <td>3</td>
+      <td>2<sup>nd-5<sup>th</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>2<sup>nd-6<sup>th</td>
+    </tr>
+    <tr>
+      <td rowspan="2">4</td>
+      <td rowspan="2">Text-VSSS</td>
+      <td>13</td>
+      <td>-</td>
+      <td rowspan="2">2<sup>nd-6<sup>th</td>
+      <td>7<sup>th-12<sup>th</td>
+      <td>Text with digits</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>-</td>
+      <td>7<sup>th-15<sup>th</td>
+      <td>Text with digits</td>
+    </tr>
+    
+  </table>
+</body>
+</html>

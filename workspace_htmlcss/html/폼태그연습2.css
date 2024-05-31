@@ -1,0 +1,48 @@
+table, tr, td{
+  border: 1px solid black;
+}
+table{
+  border-collapse: collapse;
+  width: 900;
+  margin: auto;
+}
+td{
+  padding: 6px;
+}
+.title{
+  font-weight: bold;
+}
+.title-span{
+  color: red;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+.title-tr span{
+  font-weight: bold;
+}
+
+.title-tr{
+  background-color: aqua;
+  text-align: center;
+}
+
+.title-tr>td>span>span{
+  color: red;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+table>tbody>tr>td:first-child{
+  text-align: center;
+}
+/* tbody는 코드상에 존재하지않지만 개발자모드의 해석상 존재함 */
+/* ctrl+h 텍스트 찾고 교환*/
+
+.red-font{
+  color: red;
+}
+
+.btn-div{
+  text-align: center;
+  margin-top: 10px;
+}

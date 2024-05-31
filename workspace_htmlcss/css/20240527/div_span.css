@@ -1,0 +1,29 @@
+/* div, span는 레이아웃작업 */
+/* div 불가시블록영역 */
+/* span 불가시인라인영역*/
+/*블록 태그의 display 기본값은 block */
+.d1{
+  border: 1px solid blueviolet;
+  width: 200px;
+  height: 100px;
+  display: inline-block;
+}
+
+input{
+  width: 80px;
+  height: 100px;
+  margin: 100px 80px;
+}
+
+.d2{
+  background-color: burlywood;
+  width: 300px;
+  height: 100px;
+  margin-top: 30px;
+}
+
+span{
+  color: azure;
+  font-weight: 50px;
+  font-style: italic;
+}

@@ -1,0 +1,81 @@
+/* 
+  position을 absolute면 해당 태그는
+  display속성이 inline-block이 됨 
+*/
+body{
+  background-color: lightslategray;
+  width: 100vw;
+}
+.container{
+  width: 80%;
+  margin: 20px auto;
+  background-color: white;
+  padding: 16px;
+}
+.header{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.header > span{
+  background-color: lightpink;
+  color: white;
+  font-weight: bold;
+  border-radius: 14px;
+  padding: 8px 20px;
+}
+.header > h1{
+  font-size: 2.5rem;
+  margin: 20px 0px 10px 0px;
+}
+.header > h1 > span{
+  color: lightskyblue;
+}
+.header > p{
+  line-height: 26px;
+}
+.list{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.member{
+  border: none;
+  position: relative;
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.intro{
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  gap: 10px;
+  /* display: none; */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+}
+.member:hover .intro{
+  /* display: flex; */
+  opacity: 1;
+  visibility: visible;
+}
+.sns{
+  font-size: 1.5rem;
+}
+.sns > span:hover {
+  color: lightskyblue;
+  cursor: pointer;
+}
+

@@ -1,0 +1,28 @@
+ul{
+  list-style-type: none;
+}
+ul>li{
+  display: inline-block;
+  width: 100px;  
+  text-align: center;
+}
+.div-{
+
+}
+.img-div2{
+  height: 878px;
+  background-image: url(./화면구현_메인화면.PNG);
+}
+.font1{
+  font-size: 1.2rem;
+}
+
+.1stleft{
+
+}
+.1stright{
+
+}
+.2ndmenu{
+
+}
