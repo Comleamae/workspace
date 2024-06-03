@@ -7,7 +7,7 @@ public class While_문제6 {
         int c = 0;
         while (a <= 100) {
 
-            if(b == 0){
+            if(a % 3 == 0){
                 c++;
             }
             a++;

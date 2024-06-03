@@ -6,7 +6,7 @@ public class While_문제7 {
         int b = a % 5;
         int c = 0;
         while (a <= 100){
-            if (b == 0) {
+            if (a % 5 == 0) {
                 System.out.println(b);
                 c++;
             }
