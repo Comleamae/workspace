@@ -6,6 +6,8 @@ public class While_문제5 {
         int x = 0;
 
         while (i <= 10) {
+            if () {
+            }
             x = i + 1;
             i++;
         }
