@@ -1,0 +1,125 @@
+.container{
+  width: 1200px;
+
+}
+.title{
+  background-image: url(slider03.jpg);
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header{
+  height: 100px;
+  background-color: blue;
+  color: white;
+}
+.content{
+  height: 200px;
+}
+.footer{
+  height: 100px;
+}
+.header > div{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.header ul{
+  border: 1px solid black;
+  display: flex;
+  gap: 30px;
+  font-size: 1.4rem;
+  background-color: rgb(103, 103, 106);
+  border-radius: 20px;
+  padding: 15px;
+}
+.header h1{
+  margin-left: 20px;
+}
+.footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: bisque;
+}
+.footer ul{
+  display: flex;
+  gap: 20px;
+}
+.footer p{
+  display: flex;
+}
+.titext{
+  
+}
+.title > div {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+}
+.title > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title > div > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+}
+.content > div > div{
+  display: flex;
+  justify-content: space-between;
+}
+.content > div:first-child{
+  width: 40%;
+  background-image: url();
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.content > div:nth-child(2){
+  background-image: url(banner.jpg);
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.content > div:nth-child(2) > div{
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.content > div:last-child{
+  background-image: url(link.jpg);
+  width: 30%;
+}
+.content > div >ul:first-child{
+  display: flex;
+  flex-direction: column;
+}
+.content >div >ul:last-child{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+.footer h1{
+  display: flex;
+  justify-content: space-around;
+}
+
+button{
+  border-radius: 20px;
+  width: 100px;
+  background-color: darkgrey;
+  color: white;
+}
+img{
+  display: none
+}
