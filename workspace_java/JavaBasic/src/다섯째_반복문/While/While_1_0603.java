@@ -1,4 +1,4 @@
-package 다섯_반복문.While;
+package 다섯째_반복문.While;
 
 /*
     while(반복 조건){
