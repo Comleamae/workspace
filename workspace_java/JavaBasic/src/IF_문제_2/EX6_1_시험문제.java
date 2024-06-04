@@ -2,7 +2,7 @@ package IF_문제_2;
 
 import java.util.Scanner;
 
-public class EX6 {
+public class EX6_1_시험문제 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("정수 입력: ");

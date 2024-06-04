@@ -2,7 +2,7 @@ package IF_문제_2;
 
 import java.util.Scanner;
 
-public class Ex6_true {
+public class Ex6_true_시험문제 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a, b, c;
