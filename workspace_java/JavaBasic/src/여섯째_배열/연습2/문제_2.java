@@ -9,6 +9,18 @@ public class 문제_2 {
             if(arr[i] % 2 != 0 && arr[i] % 3 != 0 && arr[i] % 5 !=0 && arr[i] % 7 != 0){
                 System.out.println(arr[i]);
             }
+            if(arr[i]  == 2 ){
+                System.out.println(arr[i]);
+            }
+            if(arr[i]  == 3 ){
+                System.out.println(arr[i]);
+            }
+            if(arr[i] == 5){
+                System.out.println(arr[i]);
+            }
+            if(arr[i] == 7){
+                System.out.println(arr[i]);
+            }
         }
     }
 }

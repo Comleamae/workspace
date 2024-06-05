@@ -7,7 +7,13 @@ public class 문제_5 {
 
         for(int i = 0; i < newArr.length; i++){
             newArr[i] = arr[i];
-            System.out.println(newArr[i]);
+            System.out.print(newArr[i] + " ");
+        }
+
+        System.out.println();
+
+        for(int e : newArr){
+            System.out.print(e + " ");
         }
     }
 }
