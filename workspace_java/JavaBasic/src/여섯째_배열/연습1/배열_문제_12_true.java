@@ -7,9 +7,9 @@ public class 배열_문제_12_true {
         //변수 선언
         Scanner sc = new Scanner(System.in);
         //0:국어, 1: 영어, 2: 수학, scores.length - 1: 총점
-        int[] scores = new int[4];
+        int[] scores = new int[6];
         //과목명
-        String[] subjects = {"국어", "영어", "수학"};
+        String[] subjects = {"국어", "영어", "수학", "사회", "과학"};
         //평균
         double avg;
 
@@ -28,7 +28,6 @@ public class 배열_문제_12_true {
         for(int i = 0; i < scores.length - 1; i++){
             scores[scores.length - 1] = scores[scores.length - 1] + scores[i];
         }
-        System.out.println("총 점 :" + scores[scores.length-1]);
         avg = scores[scores.length - 1] / (double)(scores.length - 1) ;
 
         //점수 및 총점 평균 출력
@@ -37,7 +36,7 @@ public class 배열_문제_12_true {
         for (int i = 0; i < subjects.length; i++){
             System.out.println(subjects[i] + "점수: "+scores[i]);
         }
-        System.out.println("총점 :" + scores[scores.length - 1]);
+        System.out.println("총점: " + scores[scores.length - 1]);
         System.out.println(avg);
 
     }

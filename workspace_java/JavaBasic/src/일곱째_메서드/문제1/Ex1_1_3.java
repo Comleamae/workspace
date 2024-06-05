@@ -10,13 +10,12 @@ public class Ex1_1_3 {
     public static void test1(){
         System.out.println("안녕하세요");
     }
-
     //2번 메서드
     public static void test2(){
         System.out.print("반갑습니다");
-        intest2();
+        inTest2();
     }
-    public static void intest2(){
+    public static void inTest2(){
         System.out.println("어서오세요");
     }
     //3번 메서드

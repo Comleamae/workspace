@@ -13,7 +13,11 @@ public class Ex_1_13_15 {
         System.out.print("숫자 입력");
         int num3 = sc.nextInt();
         test2(num3);
-        test3(5,6);
+        System.out.println("숫자 입력");
+        int num4 = sc.nextInt();
+        System.out.println("숫자 입력");
+        int num5 = sc.nextInt();
+        test3(num4, num5);
 
     }
     //13
@@ -21,7 +25,14 @@ public class Ex_1_13_15 {
         System.out.println(a + b);
     }
     //14
+
     public static void test2(int a){
+        //삼항연산자
+        //ex) int num = 10 > 5 ? 1 : 2;
+        //? 앞에는 참 거짓을 판별 할 수 있는 조건
+        //? 뒤에는 앞의 조건이 참이면 실행할 내용
+        //: 뒤에는 앞으 조건이 거짓이면 실행할 내용
+        //ex) System.out.println(a % 2 == 0? "짝수" : "홀수"); =>if else의 2항 문장을 요약
         if(a % 2 == 0){
             System.out.println("짝수입니다");
         }

@@ -16,9 +16,9 @@ public class Ex_1_10_12 {
     }
     //10번
     public static void test1(String name, int age, String addr){
-        System.out.println("이름은 " + name +"입니다.");
-        System.out.println("나이는 " + age +"입니다.");
-        System.out.println("주소는 " + addr +"입니다.");
+        System.out.println("이름은 " + name + "입니다.");
+        System.out.println("나이는 " + age + "입니다.");
+        System.out.println("주소는 " + addr + "입니다.");
     }
     //11번
     public static void test2(int a){
