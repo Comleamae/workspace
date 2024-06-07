@@ -13,5 +13,12 @@ public class MonitorTest {
         System.out.println(m1.price); //m1 모니터의 가격 출력
         System.out.println(m1.color); //m1 모니터의 색상 출력
 
+        Monitor m2 = new Monitor();
+        m2.brand = "Dell";
+        m2.color = "White";
+        System.out.println(m2.brand);
+        System.out.println(m2.price = 1000);
+        System.out.println("모니터의 색은: " + m2.color);
+
     }
 }
