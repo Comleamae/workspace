@@ -1,4 +1,4 @@
-package Class_basic;
+package Class_basic.monitor;
 
 public class MonitorTest {
     public static void main(String[] args) {

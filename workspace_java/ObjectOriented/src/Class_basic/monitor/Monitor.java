@@ -1,4 +1,4 @@
-package Class_basic;
+package Class_basic.monitor;
 
 //클래스를 구성하는 멤버(요소) - 변수, 메서드의 정의, 생성자
 

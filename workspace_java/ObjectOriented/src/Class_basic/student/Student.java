@@ -1,4 +1,4 @@
-package Class_basic;
+package Class_basic.student;
 
 public class Student {
     String name;
