@@ -1,9 +1,9 @@
 package Class_basic.member;
 
 public class MemberServiece {
-    String id;
-    String password;
-    boolean result;
+    private String id;
+    private String password;
+    private boolean result;
 
     public boolean login(String id, String password){
         this.id = id;
@@ -18,5 +18,8 @@ public class MemberServiece {
     }
     public void logout(String id){
         this.id = id;
+        if(id.equals("hong")){
+            System.out.println("로그아웃 되었습니다");
+        }
     }
 }
