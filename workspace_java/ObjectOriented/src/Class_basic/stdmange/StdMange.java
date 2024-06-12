@@ -50,10 +50,6 @@ public class StdMange {
             }
         }
 
-
-
-
-
     }
     //학생 정보 출력 메서드
     public void stdIntro(){
@@ -61,10 +57,7 @@ public class StdMange {
         String name = sc.next();
         for(int i = 0; i < idx; i++){
             if(std[i].getName().equals(name)){
-                System.out.println(std[i].getName());
-                System.out.println(std[i].getAge());
-                System.out.println(std[i].getPhNum());
-                System.out.println(std[i].getGrade());
+                std[i].showInfo();
             }
             else {
                 System.out.println("해당하는 학생이 존재하지 않습니다. 다시 입력하세요.");
