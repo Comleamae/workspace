@@ -19,13 +19,22 @@ public class MyArray implements MyArrayUtil{
         for(int i = 0; i < arr2.length; i++){
             num2 = num2 + arr2[i];
         }
-        arrAvg = (num1 + num2) / 2;
+        arrAvg = (num1 + num2) / (double)(arr1.length + arr2.length);
         return arrAvg;
 
     }
 
     @Override
     public boolean isEvenArray(int[] array) {
+        /*
+            for(int e : array){
+                if(e % 2 == 1){
+                return false;
+                }
+                return true;
+            }
+
+        */
         int num = 0;
         for(int i = 0; i < array.length; i++){
             if(array[i] % 2 == 0){
@@ -38,6 +47,7 @@ public class MyArray implements MyArrayUtil{
         else {
             return false;
         }
+        // num == array.length ?  true:false
 
     }
 }

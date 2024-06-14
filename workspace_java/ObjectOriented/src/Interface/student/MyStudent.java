@@ -1,47 +1,52 @@
 package Interface.student;
 
 public class MyStudent implements StudentUtil{
-    public static void main(String[] args) {
-        Student s1 = new Student("lee", 20,40,60);
-        Student s2 = new Student("park", 70,60,50);
-        Student s3 = new Student("kim", 50, 40,30);
-        String[] regStd = new String[3];
-        String name = "park";
-
-    }
 
     @Override
-    public String getGradeByStudentName(Student[] regStd , String name) {
-        String grade = "";
-        for(int i = 0; i < regStd.length; i++){
-            if(name.equals(regStd[i])){
-                double avgScore = (regStd[i].getKorScore() + regStd[i].getEngScore() + regStd[i].getMathScore()) / 3;
-                if(avgScore >= 90 && avgScore <= 100){
-                    grade = "A";
-                } else if (avgScore >= 80 && avgScore <= 89) {
-                    grade = "B";
-                } else if (avgScore >= 70 && avgScore <= 79) {
-                    grade = "C";
-                } else if (avgScore < 70){
-                    grade = "D";
-                } else {
-                    grade = "등급 없음";
-                }
+    public String getGradeByStudentName(Student[] regStd, String name) {
+        String grade = "등급없음";
+        for(Student stu : regStd){
+            if(stu.getName().equals(name)){
+                double avg = (stu.getKorScore() + stu.getMathScore() + stu.getEngScore()) / 3.0;
+                grade = getGradeByAvg(avg);
             }
         }
         return grade;
     }
 
-//    @Override
-//    public int[] getTotalScoresToArray() {
-//        int totalScore =
-//        return new int[0];
-//    }
-//
-//    @Override
-//    public Student getHighScoreStudent(Student std1, Student std2) {
-//        Student higherS;
-//
-//        return higherS;
-//    }
+    //정수에 따라 등급을 결정
+    private String getGradeByAvg(double avg){
+        String grade = "등급없음";
+
+        if(avg >= 90 && avg <= 100){
+            grade = "A";
+        } else if (avg >= 80 && avg<= 89) {
+            grade = "B";
+        } else if (avg >= 70 && avg <= 79) {
+            grade = "C";
+        } else {
+            grade = "D";
+        }
+        return grade;
+    }
+
+    @Override
+    public int[] getTotalScoresToArray(Student[] students) {
+        //학생들의 총점이 저장될 배열 생성
+        int[] totalScores = new int[students.length];
+        for(int i = 0; i < students.length; i++){
+            totalScores[i] = students[i].getKorScore() + students[i].getMathScore() + students[i].getEngScore();
+        }
+        return totalScores;
+    }
+
+
+
+    @Override
+    public Student getHighScoreStudent(Student stu1, Student stu2) {
+        int sum1 = stu1.getMathScore() + stu1.getKorScore() + stu1.getEngScore();
+        int sum2 = stu2.getMathScore() + stu2.getKorScore() + stu2.getEngScore();
+        return sum1 > sum2 ? stu1 : stu2;
+    }
+
 }

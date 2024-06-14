@@ -3,12 +3,13 @@ package Interface.student;
 //2.완성한 인터페이스를 구현한 클래스 생성(MyStudent
 //3.MyStudent 클래스에서 인터페이스의 메서드 구현
 public interface StudentUtil {
-    public String getGradeByStudentName(String[] regStd , String name);
-    public int[] getTotalScoresToArray();
-    public Student getHighScoreStudent();
+    String getGradeByStudentName(Student[] regStd, String name);
+    int[] getTotalScoresToArray(Student[] students);
+    Student getHighScoreStudent(Student stu1, Student stu2);
+    //Student getHighScoreStudent(Student[] st1);
 
 
-    }
+
 
     //1번 메서드
     /* 메서드명 : getGradeByStudentName
