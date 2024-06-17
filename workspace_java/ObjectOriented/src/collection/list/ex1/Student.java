@@ -5,11 +5,13 @@ public class Student {
     int krScore;
     int enScore;
     int total;
-    public Student() {
+
+    public Student(String name, int krScore, int enScore) {
+        this.name = name;
+        this.krScore = krScore;
+        this.enScore = enScore;
         this.total = krScore + enScore;
     }
-
-
 
     public String getName() {
         return name;
