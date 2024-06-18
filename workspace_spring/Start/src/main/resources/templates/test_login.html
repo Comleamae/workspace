@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- member.getName(); -->
+  [[${member.name}]] <br>
+  <!-- member.getAge();  -->
+  [[${member.age}]] <br>  
+  [[${abc[0]}]] <br>
+  <div th:text="${abc[1]}"></div> <br>
+  <div style="border: 1px, solid, black;">
+    <div style="display: flex; flex-direction:column; ">
+      <div>
+        아이디 
+        <input type="text" name="" id="">
+      </div>
+     <div>
+        비밀번호 
+        <input type="password" name="" id="">
+     </div>
+    </div>
+    <div style="display: flex; text-align: center;">
+      <a href="/join"><button style="color: white; background-color: aqua; border-radius: 20px;">가입하러 가기</button></a>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
