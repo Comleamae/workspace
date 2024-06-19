@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/input3" method="post">
+    <h1>학생 성적 입력 프로그램</h1> <br>
+    [[${main1VO.getName}]]학생의 성적을 입력합니다 <br>
+    <input type="hidden" name="name" th:value="${main1VO.getName}">
+    <input type="hidden" name="grade" th:value="${main2VO.getGrade}">
+    <input type="hidden" name="stNum" th:value="${main2VO.getStNum}">
+    <input type="hidden" name="ndNum" th:value="${main2VO.getNdNum}">
+    <input type="hidden" name="gender" th:value="${main2VO.getGender}">
+    
+    국어
+    <input type="number" name="krScore"> <br>
+    영어
+    <input type="number" name="enScore"> <br>
+    수학
+    <input type="number" name="maScore"> <br>
+    
+    <input type="submit" value="확인">
+  </form>
+</body>
+</html>
