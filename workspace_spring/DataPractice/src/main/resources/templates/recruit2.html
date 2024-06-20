@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/re3" method="post">
+    <input type="hidden" name="name" th:value="${reNameVO.name}">
+    <input type="hidden" name="telNum" th:value="${reNameVO.telNum}">
+    <h1>이력서 정보</h1>
+    <div>
+      학력<br>
+      <select name="grade">
+        <option value="대졸">대졸</option>
+        <option value="대학졸업예정">대학졸업예정</option>
+        <option value="전문대졸">전문대졸</option>
+        <option value="고졸">고졸</option>
+      </select>
+      <input type="text" name="schoolName"><br>
+      지원구분
+      <input type="radio" name="how" value="신입">신입
+      <input type="radio" name="how" value="경력">경력
+      <br>
+      자격정보
+      <table>
+        <tr>
+          <td>자격증명</td>
+          <td>취득일자</td>
+          <td>발행기관</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" name="liName">
+          </td>
+          <td>
+            <input type="date" name="liDate">
+          </td>
+          <td>
+            <input type="text" name="liWhere">
+          </td>
+        </tr>
+      </table>
+      경력정보
+      <table>
+        <tr>
+          <td>회사명</td>
+          <td>취득일자</td>
+          <td>발행기관</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" name="coName">
+          </td>
+          <td>
+            <input type="text" name="comWhat">
+          </td>
+          <td>
+            <input type="text" name="during">년
+            <input type="text" name="during">개월
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      자기소개
+      <textarea name="intro" rows="5" cols="5"></textarea>
+    </div>
+    <input type="submit" value="등록">
+  </form>
+  
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/order3" method="post">
+    <input type="hidden" name="menu" th:value="${orderVO.getMenu}">
+    <input type="hidden" name="menuNum" th:value="${orderVO.getMenuNum}">
+    <input type="hidden" name="tel" th:value="${orderVO.getTel}">
+    <th:block th:each="menuAdd : ${orderVO.menuAdd}">
+      <input type="hidden" name="menuAdd" th:value="${menuAdd}">
+    </th:block>
+    
+    <div>
+      <h2>주문자</h2>
+      <input type="text" name="consumer">
+    </div>
+    <div>
+      <h2>연락처</h2>
+      <input type="text" name="phNum">
+    </div>
+    <div>
+      <h2>배달 주소</h2>
+      <input type="text" name="address">
+    </div>
+    <br>
+    <input type="submit" value="주문">
+  </form>
+</body>
+</html>

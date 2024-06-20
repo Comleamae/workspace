@@ -12,6 +12,7 @@ public class Main3VO {
 
     private String name;
 
+
     public int getKrScore() {
         return krScore;
     }

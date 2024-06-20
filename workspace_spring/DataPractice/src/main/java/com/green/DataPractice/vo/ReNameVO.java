@@ -1,7 +1,8 @@
 package com.green.DataPractice.vo;
 
-public class Main1VO {
+public class ReNameVO {
     private String name;
+    private int telNum;
 
     public String getName() {
         return name;
@@ -11,10 +12,19 @@ public class Main1VO {
         this.name = name;
     }
 
+    public int getTelNum() {
+        return telNum;
+    }
+
+    public void setTelNum(int telNum) {
+        this.telNum = telNum;
+    }
+
     @Override
     public String toString() {
-        return "Main1VO{" +
+        return "ReNameVO{" +
                 "name='" + name + '\'' +
+                ", telNum=" + telNum +
                 '}';
     }
 }
