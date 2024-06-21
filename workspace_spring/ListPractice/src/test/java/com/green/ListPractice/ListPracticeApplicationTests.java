@@ -1,10 +1,10 @@
-package com.green.Order;
+package com.green.ListPractice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OrderApplicationTests {
+class ListPracticeApplicationTests {
 
 	@Test
 	void contextLoads() {

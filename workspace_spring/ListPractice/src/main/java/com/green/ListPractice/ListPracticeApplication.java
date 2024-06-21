@@ -1,13 +1,13 @@
-package com.green.Order;
+package com.green.ListPractice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OrderApplication {
+public class ListPracticeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OrderApplication.class, args);
+		SpringApplication.run(ListPracticeApplication.class, args);
 	}
 
 }

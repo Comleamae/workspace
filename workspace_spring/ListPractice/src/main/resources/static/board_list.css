@@ -1,0 +1,25 @@
+.container{
+  width: 800px;
+  margin: 30px auto;
+}
+.list-table{
+  border: 1px solid black;
+  /* 부모의 width만큼 %로 설정가능 */
+  width: 100%;
+  text-align: center;
+
+}
+/* 리스트 테이블 안의 자손 tr,td 선택 */
+.list-table tr, .list-table td{
+  border: 1px solid black;
+}
+
+.list-table td{
+  padding: 8px;
+}
+
+.btn-div{
+  margin-top: 20px;
+  text-align: center;
+}
+
