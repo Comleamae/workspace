@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div>
+      <table>
+        <tr>
+          <td>학번</td>
+          <td>학생명</td>
+          <td>국어점수</td>
+          <td>영어점수</td>
+          <td>총점</td>
+        </tr>
+          <!-- 리스트가 비었는지 여부 판단해 T/F반환 -->
+          <!-- 등록된 학생이 없으면 -->
+          <th:block th:if="${#lists.isEmpty(stuList)}">
+            <tr>
+              <td colspan="5">등록된 학생이 없습니다</td>
+            </tr>
+          </th:block>
+          <!--if/unless 조건이 맞다면/틀리다면 -->
+          <th:block th:unless="${#lists.isEmpty(stuList)}">
+            <!--등록된 학생 수 만큼 반복해 행을 생성 -->
+            <th:block th:each="student : ${stuList}">
+              <tr>
+                <td>
+                 [[${student.stuNum}]]
+                </td>
+                <td>
+                  <a th:href="@{/stuDetail(stuNum=${student.stuNum})}">
+                    [[${student.stuName}]]
+                  </a>
+                </td>
+                <td>[[${student.krNum}]]</td>
+                <td>[[${student.enNum}]]</td>
+                <!-- 타임리프 문법 내에서 연산하는 방법 -->
+                <td>[[${student.enNum + student.krNum}]]</td>
+              </tr>
+            </th:block>
+          </th:block>
+      </table>
+      <div>
+        <input type="button" value="학생등록" onclick="goRegForm()">
+      </div>
+    </div>
+  
+    <script>
+      //학생등록 버튼 클릭 시 등록 페이지로 이동하는 함수
+      function goRegForm(){
+        location.href='/regMain';
+      }
+    </script>
+</body>
+</html>
