@@ -1,4 +1,4 @@
-springweb 타임리프 개발툴 (lom) 제너레이트
+springweb 타임리프 개발툴 (lombok) mariadb  mybatis 제너레이트
 세팅 파일인코딩 빌드툴그레이들 컴파일러 
 포트추가 그레이들추가
 메인메소드실행 에디트 jdk
