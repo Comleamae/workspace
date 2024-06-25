@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>주문서</h1><br>
+  <h2>주문정보</h2>
+  
+  <div>
+    [[${orderVO.getMenu}]] ([[${orderVO.getMenuNum}]] 마리)<br>
+    
+    추가사항 : 
+    <th:block th:each="menuAdd : ${orderVO.menuAdd}">
+      <span>[[${menuAdd}]]</span>
+    </th:block>
+    <br>
+
+    <!-- 자바선언 -->
+    주문금액 : [[${total}]]원 <br>
+    <!-- html내부 선언 -->
+    주문금액2 : [[${orderVO.menuNum * 10000 + #arrays.length(orderVO.menuAdd) * 1000}]]원 <br>
+    요청사항 : [[${orderVO.getTel}]]
+  </div>
+  <h2>배달정보</h2>
+  <div>
+    주문자 : [[${deliverlyVO.getConsumer}]] <br>
+    연락처 : [[${deliverlyVO.getPhNum}]] <br>
+    배달주소 : [[${deliverlyVO.getAddress}]] <br>
+  </div>
+
+</body>
+</html>

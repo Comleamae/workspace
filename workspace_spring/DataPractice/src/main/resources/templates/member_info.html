@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/reg_mem" method="post">
+    <table style="border: 1px solid black;">
+      <tr>
+        <td>아이디</td>
+        <td th:text="${regMemVO.id}"></td>
+        <td>이름</td>
+        <td th:text="${regMemVO.name}"></td>
+      </tr>
+      <tr>
+        <td>연락처</td>
+        <td th:text="${regMemVO.number}"></td>
+        <td>이메일</td>
+        <td th:text="${regMemVO.email}"></td>
+      </tr>
+      <tr>
+        <td>생일</td>
+        <td th:text="${regMemVO.birthday}"></td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

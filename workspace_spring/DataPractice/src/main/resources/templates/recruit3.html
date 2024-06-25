@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>이력서 확인</h1>
+  <div>
+    <table>
+      <tr>
+        <td>이름</td>
+        <td>[[${reNameVO.name}]]</td>
+        <td>연락처</td>
+        <td>[[${reNameVO.telNum}]]</td>
+      </tr>
+      <tr>
+        <td>학력</td>
+        <td>[[${reEtcVO.schoolName}]] [[${reEtcVO.grade}]]</td>
+        <td>지원구분</td>
+        <td>[[${reEtcVO.how}]]</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <table>
+      <tr>
+        <td>자격증 정보</td>
+        <td>
+          [[${reEtcVO.liName}]] [[${reEtcVO.liDate}]] [[${reEtcVO.liWhere}]]
+        </td>
+      </tr>
+      <tr>
+        <td>경력 정보</td>
+        <td>
+          [[${reEtcVO.comName}]] [[${reEtcVO.comWhat}]] [[${reEtcVO.During}]]
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <table>
+      <tr>
+        <td>자기소개</td>
+      </tr>
+      <tr>
+        <td>
+          [[${reEtcVO.intro}]]
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/board_list.css">
+  <!-- openliveserver로 실행시의 경로 설정방법 -->
+  <!-- <link rel="stylesheet" href="/static/board_list.css"> -->
+
+</head>
+<body>
+  <div class="container">
+    <div class="list-div">
+      <table class="list-table">
+        <!-- 각 칸의 넓이 지정 -->
+        <colgroup>
+          <col width="10%">
+          <!-- 전체(100)에서 나머지의 합을 뺀 값을 *에 넣어준다 -->
+          <col width="*">
+          <col width="15%">
+          <col width="15%">
+        </colgroup>
+        <thead>
+          <tr>
+            <td>글번호</td>
+            <td>제 목</td>
+            <td>작성자</td>
+            <td>작성일</td>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 게시글이 없으면 /참이면-->
+          <th:block th:if="${#lists.isEmpty(boardList)}">
+            <tr>
+              <!-- colspan 열병합 -->
+              <td colspan="4">등록된 게시글이 없음</td>
+            </tr>
+          </th:block>
+          <!-- 게시글이 있으면 /거짓이면-->
+          <th:block th:unless="${#lists.isEmpty(boardList)}">
+            <tr th:each="border : ${boardList}">
+              <td>[[${border.boardNum}]]</td>
+              <td><a th:href="@{/detail(boardNum=${border.boardNum})}">[[${border.title}]]</a></td>
+              <td>[[${border.writer}]]</td>
+              <td>[[${border.createDate}]]</td>
+            </tr>
+          </th:block>
+        </tbody>
+      </table>
+    </div>
+    <div class="btn-div">
+      <input type="button" value="글쓰기" onclick="goWrite()">
+    </div>
+  </div>
+
+  <script src="/board_list.js"></script>
+</body>
+</html>

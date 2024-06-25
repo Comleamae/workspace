@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div>
+      <table>
+        <tr>
+          <td>학번</td>
+          <td>[[${student.stuNum}]]</td>
+          <td>이름</td>
+          <td>[[${student.stuName}]]</td>
+        </tr>
+        <tr>
+          <td>국어점수</td>
+          <td>[[${student.krNum}]]</td>
+          <td>영어점수</td>
+          <td>[[${student.enNum}]]</td>
+        </tr>
+        <tr>
+          <td>자기소개</td>
+          <td>[[${student.intro}]]</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <input type="submit" value="뒤로가기" onclick="goBack()">
+      <input type="submit" value="학생수정" th:onclick="goUpdateForm([[${student.stuNum}]])">
+      <button type="button" th:onclick="goDelete([[${student.stuNum}]])">학생삭제</button>
+    </div>
+
+  <script>
+    //뒤로가기 버튼 클릭 시 실행 함수
+    function goBack(){
+      location.href='/stuMain';
+    }
+    //학생 삭제 클릭 시 실행
+    function goDelete(stuNum){
+      const result=confirm('삭제할까요?')
+      if(result){
+         location.href=`/stuDelete?stuNum=${stuNum}`;
+      }
+    }
+    //학생수정 클릭시 실행 ->학생정보를 수정 할 수 있는 페이지로 이동
+    function goUpdateForm(stuNum){
+      location.href=`/updateForm?stuNum=${stuNum}`;
+    }
+  </script>
+</body>
+</html>
