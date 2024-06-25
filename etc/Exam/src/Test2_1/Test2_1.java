@@ -6,6 +6,8 @@ public class Test2_1 {
 
         calculate.setNumber(80, 50);
 
-        calculate.getSum();
+        System.out.printf("두 수의 합은" + calculate.getSum());
+        System.out.printf("두 수 중 큰 수는"+  calculate.getMax());
+        System.out.printf("두 수의 평균은"+ calculate.getAvg());
     }
 }
