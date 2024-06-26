@@ -1,0 +1,90 @@
+스프링의 지향점
+
+*결합도=각 클래스의 자기 완결성과 반비례 
+->interface사용해 낮출 수 있다. 
+객체 생성코드(new 객체명()) 사용X->스프링이 객체 자동 생성
+
+
+*응집도=각 클래스의 자기 완결성과 비례
+
+- (클래스 간)결합도는 낮추고, (한 클래스의)응집도는 높인다. -> 좋은(유지보수하기 좋은) 프로그램이다
+- 결합도를 낮추기 위해서 IOC, DI 개념 도입
+- 응집도를 높이기 위해서 AOP 개념 도입
+
+*IOC,DI 개념
+IOC(Inversion Of Control) : 제어의 역전
+- 객체를 생성하는 주체가 개발자에서 스프링(컨테이너)으로 변경됨을 이야기함 
+
+*Q? 그럼 개발자가 객체 생성을 하지 않고 스프링이 객체를 생성해준다면
+     스프링은 어떤 방식으로 객체를 생성해 주는 것인가? ->DI
+
+DI(Dependency Injection) : 의존성 주입
+- IOC를 통해 자동으로 생성된 객체를 개발자가 사용할 때 진행되는 방식
+
+스프링이 자동으로 객체를 생성하도록 코드를 작성하는 방법
+1. 객체를 자동으로 생성하고 싶은 클래스는 반드시 프로젝트의 
+   기본 패키지 안에 생성한다.(기본패키지 안에 있다고 해서 객체가 자동으로 생성X, 최소 자격요건)
+2. 클래스 위에 어노테이션을 사용해서 클래스의 객체를 
+   프로젝트가 시작되자마자 자동으로 생성한다
+   *클래스 위에 선언하여 객체를 생성해주는 어노테이션
+   1) @Component 올드타입
+   2) @Controller @Service @Repository(저장소) 뉴타입
+
+그럼, 스프링이 자동으로 생성해준 객체를 우리가 어떻게 써야할까?
+- 어노테이션을 사용해 스프링이 자동 생성해준 객체를 우리가 사용할 수 있다.
+- 아래 두 어노테이션은 생성된 객체를 사용할 때 사용하며, 멤버변수 위에 작성한다. 
+  @Autowired : 생성된 객체의 자료형을 비교해 생성된 객체를 사용
+  @Resource : 생성된 객체의 이름을 비교해 생성된 객체를 사용
+
+객체 생성과 생성된 개체를 사용하는 예시1
+@Component
+class Aaa{} -> Aaa aaa = new Aaa();
+
+@Service("b")
+class Bbb{} -> Bbb b = new Bbb();
+
+class Ccc{
+   @Autowired   
+   private Aaa a; -> //Aaa a =aaa; = IOC로 자동으로 생성된 aaa, b를 자료형을 비교해 같은 자료를 가진 객체 aaa를 a에 넣는다
+}
+
+객체 생성과 생성된 개체를 사용하는 예시2
+class Animal{}
+
+@Component
+class Dog extends Animal{} -> Dog dog = new Dog();
+
+@Componet
+class Cat extends Animal{} -> Cat cat = new Cat();
+
+class AnimalHouse{
+  @Resource(name = "dog")
+  private Animal a; -> //Animal a = dog
+
+  @Autowired
+  private Dog d; -> //Dog d = dog;
+}
+
+객체 생성과 생성된 개체를 사용하는 예시3
+interface BoardService{} 
+
+@Service("boardService")
+class BoardServiceImpl implements BoardService{} 
+        -> BoardServiceImpl boardService = new BoardServiceImpl();
+
+@Service
+class MyBoard implements BoardService{}
+       -> MyBoard myBoard = new MyBoard();
+
+@Component
+class SqlSession{}
+      -> SqlSession sqlSession = new SqlSession();
+
+class BoardController{
+
+    @Resource(name = "boardService") or @Resource(name = "myBoard") 
+    private BoardService boardService;
+
+    @Autowired or @Resource(name = "sqlSession") 
+    private SqlSession sqlSession;
+}
