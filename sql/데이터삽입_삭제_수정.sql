@@ -1,9 +1,4 @@
-CREATE TABLE test_member(
-	MEM_NUM INT PRIMARY KEY -- 중복 불가, NULL 불가 
-	,MEM_NAME VARCHAR(50) 
-	,MEM_AGE INT
-	,MEM_ADDR VARCHAR(50)
-);
+
 
 SELECT * FROM test_member;
 
@@ -20,7 +15,7 @@ INSERT INTO test_member (MEM_NUM, MEM_NAME, MEM_AGE, MEM_ADDR)
 VALUES (10, 'KIM', 26, '울산');
 
 ROLLBACK;
-COMMIT;
+
 
 INSERT INTO test_member (MEM_NUM, MEM_NAME, MEM_ADDR, MEM_AGE) 
 VALUES (7, 'KIM', '서울산', 84);
@@ -69,5 +64,9 @@ ROLLBACK;
 -- 40살 이하인 회원을 모두 삭제
 DELETE FROM test_member
 WHERE MEM_AGE <= 40;
+
+INSERT INTO test_member (MEM_NUM, MEM_NAME, MEM_AGE, MEM_ADDR)
+VALUES (1, 'LIM', 40, '부산');
+
 
 

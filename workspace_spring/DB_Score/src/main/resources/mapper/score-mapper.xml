@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+
+<mapper namespace="scoreMapper">
+    <resultMap id="student" type="com.green.DB_Score.vo.ScoreVO">
+        <result column="STU_NUM" property="stuNum"/>
+        <result column="STU_NAME" property="stuName"/>
+        <result column="KOR_SCORE" property="korScore"/>
+        <result column="ENG_SCORE" property="engScore"/>
+        <result column="INTRO" property="intro"/>
+    </resultMap>
+    <!--학생 등록-->
+	<insert id="regStu">
+        INSERT INTO
+            score_info
+        VALUES(
+             #{stuNum}
+            , #{stuName}
+            , #{korScore}
+            , #{engScore}
+            , #{intro}
+        );
+    </insert>
+
+    <!--학생 목록 조회-->
+    <select id="getStuList" resultMap="student">
+        SELECT STU_NUM
+            , STU_NAME
+            , KOR_SCORE
+            , ENG_SCORE
+        FROM score_info;
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

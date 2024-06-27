@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <table border="1">
+      <tr>
+        <td>학번</td>
+        <td>학생명</td>
+        <td>국어점수</td>
+        <td>영어점수</td>
+        <td>총점</td>
+      </tr>
+      <th:block th:if="${#lists.isEmpty(stuList)}">
+        <tr>
+          <td colspan="5">
+            조회된 학생이 없습니다.
+          </td>
+        </tr>
+      </th:block>
+      <th:block th:unless="${#lists.isEmpty(stuList)}">
+          <tr th:each="students: ${stuList}">
+            <td>[[${students.stuNum}]]</td>
+            <td>[[${students.stuName}]]</td>
+            <td>[[${students.korScore}]]</td>
+            <td>[[${students.engScore}]]</td>
+            <td>[[${students.korScore + students.engScore}]]</td>
+          </tr>
+      </th:block>
+    </table>
+    <input type="button" value="학생등록" onclick="goReg()">
+  </div>
+  <script>
+    function goReg(){
+      location.href = '/insertForm'
+    }
+  </script>
+</body>
+</html>
