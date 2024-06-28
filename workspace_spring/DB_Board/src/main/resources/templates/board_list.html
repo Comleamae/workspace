@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <table border="1">
+      <tr>
+        <td>글번호</td>
+        <td>제목</td>
+        <td>작성자</td>
+        <td>조회수</td>
+      </tr>
+
+      <th:block th:if="${#lists.isEmpty(boardList)}">
+        <tr>
+          <td colspan="4">
+            등록된 글 없음
+          </td>
+        </tr>
+      </th:block>
+
+      <th:block th:unless="${#lists.isEmpty(boardList)}">
+        <tr th:each="contents : ${boardList}">
+          <td>
+            [[${contents.boardNum}]]
+          </td>
+          <td>
+            <a th:href="@{/boardDetail(boardNum=${contents.boardNum})}">
+              [[${contents.title}]]
+            </a>
+          </td>
+          <td>
+            [[${contents.writer}]]
+          </td>
+          <td>
+            [[${contents.readCnt}]]
+          </td>
+        </tr>
+      </th:block>
+
+    </table>
+    <input type="button" value="글쓰기" onclick="goWrite()">
+  </div>
+  <script>
+    function goWrite(){
+      location.href='/writeForm';
+    }
+  </script>
+</body>
+</html>

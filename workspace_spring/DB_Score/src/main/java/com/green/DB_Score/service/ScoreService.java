@@ -13,4 +13,13 @@ public interface ScoreService {
     //학생 목록 조회
     List<ScoreVO> getStuList();
 
+    //학생 상세 조회
+    ScoreVO getStuDetail(int stuNum);
+
+    //학생 상세 수정
+    void updateStuDetail(ScoreVO scoreVO);
+
+    //학생 정보 삭제
+    void deleteStu(int stuNum);
+
 }

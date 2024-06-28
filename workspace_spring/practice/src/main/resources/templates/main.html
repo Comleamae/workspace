@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <table>
+      <tr>
+        <td>실험번호</td>
+        <td>실험명</td>
+        <td>실험자</td>
+        <td>조회수</td>
+      </tr>
+      <th:block th:if="${#lists.isEmpty(subjectList)}">
+        <tr>
+          <td colspan="4">연구자료가 없습니다</td>
+        </tr>
+      </th:block>
+      <th:block th:unless="${#lists.isEmpty(subjectList)}">
+        <tr th:each="subjects : ${subjectList}">
+          <td>
+            [[${subjects.sujectNum}]]
+          </td>
+          <td>
+            [[${subjects.title}]]
+          </td>
+          <td>
+            [[${subjects.worker}]]
+          </td>
+          <td>
+            [[${subjects.readCnt}]]
+          </td>
+        </tr>
+      </th:block>
+    </table>
+  </div>
+</body>
+</html>

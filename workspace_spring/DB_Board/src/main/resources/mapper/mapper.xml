@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="boardMapper">
+    <resultMap id="contents" type="com.green.DB_Board.vo.BoardVO">
+        <result column="BOARD_NUM" property="boardNum"/>
+        <result column="TITLE" property="title"/>
+        <result column="WRITER" property="writer"/>
+        <result column="CONTENT" property="content"/>
+        <result column="READ_CNT" property="readCnt"/>
+    </resultMap>
+	<!--게시판 전체 정보 출력-->
+    <select id="getBoardList" resultMap="contents">
+        SELECT BOARD_NUM
+            , TITLE
+            , WRITER
+            , CONTENT
+            , READ_CNT
+        FROM simple_board;
+    </select>
+    <!--게시판에 들어갈 정보 등록하기-->
+    <insert id="regBoard">
+        INSERT INTO
+            simple_board
+        VALUES(
+            #{boardNum}
+            , #{title}
+            , #{writer}
+            , #{content}
+            , #{readCnt}
+        );
+    </insert>
+    <!--게시글 상세 보기-->
+    <select id="boardDetail" resultMap="contents">
+        SELECT BOARD_NUM
+            , TITLE
+            , WRITER
+            , CONTENT
+            , READ_CNT
+        FROM simple_board
+        WHERE
+            BOARD_NUM=#{boardNum};
+    </select>
+    <!--게시글 삭제하기-->
+    <delete id="boardDelete">
+        DELETE
+        FROM
+            simple_board
+        WHERE
+            BOARD_NUM=#{boardNum};
+    </delete>
+    <!--게시글 수정하기-->
+    <update id="boardUpdate">
+        UPDATE simple_board
+        SET TITLE = #{title}
+            , CONTENT = #{content}
+        WHERE
+            BOARD_NUM = #{boardNum};
+    </update>
+    <!--게시글 조회수 증가-->
+    <update id="updateView">
+        UPDATE simple_board
+        SET READ_CNT =  READ_CNT + 1
+        WHERE
+            BOARD_NUM = #{boardNum};
+    </update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

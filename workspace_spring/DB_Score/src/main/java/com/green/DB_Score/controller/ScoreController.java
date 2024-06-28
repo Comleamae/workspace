@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -27,13 +28,13 @@ public class ScoreController {
         return "stu_list";
     }
 
-    @GetMapping("/insertForm")
+    @GetMapping("/stuInsertForm")
     public String insertForm(){
 
         return "reg_student";
     }
 
-    @PostMapping ("/insert")
+    @PostMapping ("/stuInsert")
     public String insert(ScoreVO scoreVO, Model model){
 
         ScoreVO vo = new ScoreVO();
@@ -44,9 +45,50 @@ public class ScoreController {
         vo.setEngScore(scoreVO.getEngScore());
         vo.setIntro(scoreVO.getIntro());
         scoreService.insert(vo);
-        model.addAttribute("stu", vo);
+        model.addAttribute("students", vo);
         return "redirect:/";
     }
+
+    @GetMapping ("/stuDetail")
+    public String detail(ScoreVO scoreVO, Model model){
+        ScoreVO vo = new ScoreVO();
+        vo = scoreService.getStuDetail(scoreVO.getStuNum());
+        model.addAttribute("students", vo);
+        return  "stu_detail";
+    }
+
+    @GetMapping ("/stuUpdateForm")
+    public String updateForm(ScoreVO scoreVO, Model model){
+        ScoreVO vo = new ScoreVO();
+        vo = scoreService.getStuDetail(scoreVO.getStuNum());
+        model.addAttribute("students", vo);
+        return  "update_student";
+    }
+
+    @PostMapping ("/stuUpdate")
+    public String update(@RequestParam (name = "stuNum") int stuNum, ScoreVO scoreVO, Model model){
+        ScoreVO vo = new ScoreVO();
+
+        vo.setStuName(scoreVO.getStuName());
+        vo.setKorScore(scoreVO.getKorScore());
+        vo.setEngScore(scoreVO.getEngScore());
+        vo.setIntro(scoreVO.getIntro());
+
+        scoreService.updateStuDetail(scoreVO);
+
+        model.addAttribute("students", vo);
+
+        return "redirect:/stuDetail?stuNum="+scoreVO.getStuNum();
+    }
+
+    @GetMapping("/stuDelete")
+    public String delete(@RequestParam (name = "stuNum") int stuNum){
+        scoreService.deleteStu(stuNum);
+        return "redirect:/";
+    }
+
+
+
 
 
 }

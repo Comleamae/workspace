@@ -25,7 +25,11 @@
       <th:block th:unless="${#lists.isEmpty(stuList)}">
           <tr th:each="students: ${stuList}">
             <td>[[${students.stuNum}]]</td>
-            <td>[[${students.stuName}]]</td>
+            <td>
+              <a th:href="@{/stuDetail(stuNum=${students.stuNum})}">
+                [[${students.stuName}]]
+              </a>
+            </td>
             <td>[[${students.korScore}]]</td>
             <td>[[${students.engScore}]]</td>
             <td>[[${students.korScore + students.engScore}]]</td>
@@ -36,7 +40,7 @@
   </div>
   <script>
     function goReg(){
-      location.href = '/insertForm'
+      location.href = '/stuInsertForm'
     }
   </script>
 </body>

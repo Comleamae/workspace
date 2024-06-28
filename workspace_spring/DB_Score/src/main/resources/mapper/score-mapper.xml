@@ -32,6 +32,37 @@
             , ENG_SCORE
         FROM score_info;
     </select>
+
+    <!--학생 상세 정보 조회-->
+    <select id="getStuDetail" resultMap="student">
+        SELECT STU_NUM
+            , STU_NAME
+            , KOR_SCORE
+            , ENG_SCORE
+            , INTRO
+        FROM score_info
+        WHERE
+            STU_NUM = #{stuNum};
+    </select>
+
+    <!--학생 상세 정보 수정-->
+    <update id="updateStuDetail">
+        UPDATE score_info
+        SET STU_NAME = #{stuName}
+            , KOR_SCORE = #{korScore}
+            , ENG_SCORE = #{engScore}
+            , INTRO = #{intro}
+        WHERE
+           STU_NUM = #{stuNum};
+    </update>
+
+    <!--학생 정보 삭제-->
+    <delete id="deleteStu">
+        DELETE
+        FROM score_info
+        WHERE
+            STU_NUM = #{stuNum};
+    </delete>
 </mapper>
 
 

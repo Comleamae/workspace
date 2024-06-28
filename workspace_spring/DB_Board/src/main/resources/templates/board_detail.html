@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <table border="1">
+      <tr>
+        <td>글번호</td>
+        <td>
+          [[${contents.boardNum}]]
+        </td>
+        <td>작성자</td>
+        <td>
+          [[${contents.writer}]]
+        </td>
+      </tr>
+      <tr>
+        <td>제목</td>
+        <td colspan="3">
+          [[${contents.title}]]
+        </td>
+      </tr>
+      <tr>
+        <td>내용</td>
+        <td colspan="3">
+          [[${contents.content}]]
+        </td>
+      </tr>
+    </table>
+    <input type="button" value="뒤로가기" onclick="goBack()">
+    <input type="button" value="수정" th:onclick="goUpdateForm([[${contents.boardNum}]])">
+    <input type="button" value="삭제" th:onclick="goDelete([[${contents.boardNum}]])">
+  </div>
+
+  <script>
+    function goBack(){
+      location.href='/'
+    }
+
+    function goUpdateForm(boardNum){
+      location.href=`/updateForm?boardNum=${boardNum}`;
+    }
+
+    function goDelete(boardNum){
+      location.href=`/boardDelete?boardNum=${boardNum}`;
+    }
+  </script>
+</body>
+</html>

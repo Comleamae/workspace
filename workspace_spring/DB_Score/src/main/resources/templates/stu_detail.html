@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div>
+      <table>
+        <tr>
+          <td>학번</td>
+          <td>[[${students.stuNum}]]</td>
+          <td>이름</td>
+          <td>[[${students.stuName}]]</td>
+        </tr>
+        <tr>
+          <td>국어점수</td>
+          <td>[[${students.korScore}]]</td>
+          <td>영어점수</td>
+          <td>[[${students.engScore}]]</td>
+        </tr>
+        <tr>
+          <td>자기소개</td>
+          <td colspan="3">[[${students.intro}]]</td>
+        </tr>
+      </table>
+      <input type="button" value="뒤로가기" onclick="goBack()">
+      <input type="button" value="학생수정" th:onclick="goUpdateForm([[${students.stuNum}]])">
+      <input type="button" value="학생삭제" th:onclick="goDelete([[${students.stuNum}]])">
+    </div>
+  <script>
+    function goBack(){
+      location.href='/'
+    }
+    function goUpdateForm(stuNum){
+      location.href=`/stuUpdateForm?stuNum=${stuNum}`;
+    }
+    function goDelete(stuNum){
+      location.href=`/stuDelete?stuNum=${stuNum}`;
+    }
+  </script>
+</body>
+</html>
