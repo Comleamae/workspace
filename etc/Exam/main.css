@@ -1,0 +1,48 @@
+.container{
+  text-align: center;
+  border: 1px solid black;
+}
+
+.stHeader{
+  display: inline-flex;
+  flex-direction: row;
+  
+}
+.stContent>div{
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}
+.stIntro>:first-child div{
+  display: flex;
+  flex-direction: column;
+}
+ul{
+  display: inline-flex;
+  flex-direction: row;
+}
+li{
+  margin: 20px;
+}
+.blog{
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: inline-flex;
+}
+.blog>div{
+  padding: 20px;
+}
+.blog p{
+  text-align: justify;
+}
+.rule{
+  margin-top: 20px;
+  display: inline-flex;
+  margin-bottom: 40px;
+}
+.rule>div>div{
+  border: 80px solid orange;
+  border-radius: 100%;
+  margin: 50px 20px;
+}
+

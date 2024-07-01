@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="boardMapper">
+    <resultMap id="board" type="com.green.BasicBoard.vo.BoardVO">
+        <result column="BOARD_NUM" property="boardNum"/>
+        <result column="TITLE" property="title"/>
+        <result column="WRITER" property="writer"/>
+        <result column="CONTENT" property="content"/>
+        <result column="CREATE_DATE" property="createDate"/>
+        <result column="READ_CNT" property="readCnt"/>
+    </resultMap>
+    <!--게시글 전체를 보여줄 매퍼-->
+	<select id="getBoardList" resultMap="board">
+        SELECT *
+        FROM BASIC_BOARD
+        <!--위는 항상 실행 아래는 if문-->
+                <!-- 널도 아니고 빈글자도 아니라면-->
+        <if test="searchValue!=null and !searchValue.equals('')">
+            <!--일반적 빈값은 #{}, 컬럼명이 바뀔경우 ${}-->
+           WHERE ${searchKeyword} LIKE CONCAT('%', #{searchValue}, '%')
+        </if>
+    </select>
+    <!--하나의 게시글을 보여주 매퍼-->
+    <select id="getBoard" resultMap="board">
+        SELECT *
+        FROM BASIC_BOARD
+        WHERE BOARD_NUM = #{boardNum};
+    </select>
+    <!--게시글을 등록할 매퍼-->
+    <insert id="regBoard">
+        INSERT INTO BASIC_BOARD
+            (TITLE
+            , WRITER
+            , CONTENT
+            )
+        VALUES(#{title}
+            , #{writer}
+            , #{content}
+        );
+    </insert>
+    <!-- 게시글 조회수 상승 매퍼-->
+    <update id="updateView">
+        UPDATE BASIC_BOARD
+        SET READ_CNT = READ_CNT + 1
+        WHERE
+            BOARD_NUM = #{boardNum};
+    </update>
+    <!-- 게시글을 업데이트할 매퍼-->
+    <update id="updateBoard">
+        UPDATE BASIC_BOARD
+        SET TITLE = #{title},
+            CONTENT = #{content}
+        WHERE
+            BOARD_NUM = #{boardNum};
+    </update>
+    <!-- 게시글 삭제 매퍼-->
+    <delete id="deleteBoard">
+        DELETE
+            FROM BASIC_BOARD
+        WHERE
+            BOARD_NUM = #{boardNum};
+    </delete>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

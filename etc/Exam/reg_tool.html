@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="reg_tool.css">
+</head>
+<body>
+  <div class="container">
+    <div class="first">
+      <h3>
+        회원가입
+      </h3>
+      <table>
+        <tr>
+          <td>
+            회원구분
+          </td>
+          <td>
+            <input type="radio" id="contry">개인회원
+            <input type="radio" id="contry">외국인회원(foreigner)
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="second">
+      <h3>
+        기본정보
+      </h3>
+      <table>
+        <tr>
+          <td>아이디</td>
+          <td>
+            <input type="text" name="id">
+            (영어소문자/숫자, 4~16자)
+          </td>
+        </tr>
+        <tr>
+          <td>비밀번호</td>
+          <td>
+            <input type="text" name="pw">
+            (영어 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)
+          </td>
+        </tr>
+        <tr>
+          <td>비밀번호 확인</td>
+          <td>
+            <input type="text" name="repw">
+          </td>
+        </tr>
+        <tr>
+          <td>이름</td>
+          <td>
+            <input type="text" name="name">
+          </td>
+        </tr>
+        <tr>
+          <td>주소</td>
+            <td>
+              <input type="text" name="addr1"> 
+              <input type="button" value="우편번호 >">
+            </td>
+            <td>
+              <input type="text" name="addr2">
+              기본주소
+            </td>
+            <td>
+              <input type="text" name="addr3">
+              나머지주소(선택입력가능)
+            </td>
+        </tr>
+        <tr>
+          <td>일반전화</td>
+          <td>
+            <select name="stNum">
+              <option value="02">02</option>
+              <option value="052">052</option>
+            </select>
+            -
+            <input type="number" name="ndNum">
+            -
+            <input type="number" name="rdNum">
+          </td>
+        </tr>
+        <tr>
+          <td>휴대전화</td>
+          <td>
+            <select name="stPh">
+              <option value="010">010</option>
+              <option value="011">011</option>
+            </select>
+            -
+            <input type="number" name="ndPh">
+            -
+            <input type="number" name="rdPh">
+          </td>
+        </tr>
+        <tr>
+          <td>SMS 수신여부</td>
+          <td>
+            <input type="checkbox" name="sms">동의함 
+            <br>
+            쇼핑몰에서 제고하는 유익한 이벤트 소식을 SMS로 받으실수 있습니다.
+          </td>
+        </tr>
+        <tr>
+          <td>이메일</td>
+          <td>
+            <input type="text" name="email">
+          </td>
+        </tr>
+        <tr>
+          <td>이메일 수신여부</td>
+          <td>
+            <input type="checkbox" name="emailCh">동의함 <br>
+            쇼핑몰에서 제공하는 유익한 이벤트 소식을 SMS로 받으실 수 있습니다.
+          </td>
+        </tr>
+        <tr>
+          <td>평생회원</td>
+          <td>
+            <input type="radio" id="eten">동의함
+            <input type="radio" id="eten">동의안함
+            <br>
+            -평생회원으로 가입하시면 <span>스타일맨</span> 회원 탈퇴시까지는 휴면회원으로 전환되지 않으면, 고객님의 개인정보가 탈퇴시까지 안전하게 보관됩니다. <br>
+            -지금 평생회원으로 가입하시면 쿠폰혜택을 들비니다. (쿠폰혜택을 받으신 경우, 3개월간 평생회운을 유지하셔야 합니다.)
+          </td>
+        </tr>          
+      </table>
+    </div>
+    <div class="third">
+      <h3>
+        추가정보
+      </h3>
+      <table>
+        <tr>
+          <td>생년월일</td>
+          <td>
+            <input type="number" name="year">년
+            <input type="number" name="month">월
+            <input type="number" name="day">일
+            <input type="radio" id="date"> 양력
+            <input type="radio" id="date"> 음력
+            (14세 미만 회원가입을 제한하고 있습니다.)
+          </td>
+        </tr>
+        <tr>
+          <td>성별</td>
+          <td>
+            <input type="radio" id="gender">남자
+            <input type="radio" id="gender">여자
+          </td>
+        </tr>
+        <tr>
+          <td>상의 사이즈</td>
+          <td>
+            <input type="checkbox" id="chestSize">90~95
+            <input type="checkbox" id="chestSize">100~105
+            <input type="checkbox" id="chestSize">110~115
+            <input type="checkbox" id="chestSize">120~125
+            <input type="checkbox" id="chestSize">130~
+          </td>
+        </tr>
+        <tr>
+          <td>하의 사이즈</td>
+          <td>
+            <input type="checkbox" id="pantsSize">~30
+            <input type="checkbox" id="pantsSize">32
+            <input type="checkbox" id="pantsSize">33
+            <input type="checkbox" id="pantsSize">34
+            <input type="checkbox" id="pantsSize">35
+            <input type="checkbox" id="pantsSize">36
+            <input type="checkbox" id="pantsSize">37
+            <input type="checkbox" id="pantsSize">38
+            <input type="checkbox" id="pantsSize">39
+            <input type="checkbox" id="pantsSize">40
+            <input type="checkbox" id="pantsSize">42~
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/goUpdate" method="post">
+    <div>
+      <input type="hidden" name="boardNum" th:value="${boards.boardNum}">
+      <table border="1">
+        <tr>
+          <td>글번호</td>
+          <td>
+            [[${boards.boardNum}]]
+          </td>
+          <td>조회수</td>
+          <td>
+            [[${boards.readCnt}]]
+          </td>
+        </tr>
+        <tr>
+          <td>작성일</td>
+          <td>
+            [[${boards.createDate}]]
+          </td>
+          <td>작성자</td>
+          <td>
+            [[${boards.writer}]]
+          </td>
+        </tr>
+        <tr>
+          <td>제목</td>
+          <td>
+            <input type="text" name="title">
+          </td>
+        </tr>
+        <tr>
+          <td>내용</td>
+          <td>
+            <input type="text" name="content">
+          </td>
+        </tr>
+      </table>
+      <input type="button" value="뒤로가기" onclick="goBack()">
+      <input type="submit" value="수정">
+    </div>
+  </form>
+
+  <script>
+    function goBack(){
+      location.href='/goDetail'
+    }
+  </script>
+</body>
+</html>
