@@ -1,22 +1,9 @@
 .container{
   text-align: center;
-  border: 1px solid black;
+  width: 100%;
+  margin: auto;
 }
 
-.stHeader{
-  display: inline-flex;
-  flex-direction: row;
-  
-}
-.stContent>div{
-  display: flex;
-  flex-direction: column;
-  margin: 50px;
-}
-.stIntro>:first-child div{
-  display: flex;
-  flex-direction: column;
-}
 ul{
   display: inline-flex;
   flex-direction: row;
@@ -24,25 +11,135 @@ ul{
 li{
   margin: 20px;
 }
-.blog{
-  margin-top: 20px;
+.stHeader{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.seachForm{
+  position: relative;
+}
+.stHeader input{
+  height: 40px;
+  width: 500px;
+}
+.stHeader i{
+  color: orange;
+  position: absolute;
+  font-size: 1.5rem;
+  right: 486px;
+  margin-top: 9px;
+}
+.stContent{
+  margin-bottom: 150px;
+  position: relative;
+}
+.slide{
+  background-image: url(./slide1.jpg);
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  position: relative;
+}
+.conetentText{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.stContent h1{
+  font-size: 80px;
+  margin-bottom: 30px;
+  color: orange;
+}
+.stContent p{
+  color: white;
+  width: 650px;
+  text-align: center;
+  font-size: 1.2rem;
   margin-bottom: 50px;
-  display: inline-flex;
+}
+.stContent input{
+  background-color: orange;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px 50px;
+  border: none;
+  cursor: pointer;
+}
+.stIntro{
+  margin-bottom: 150px;
+
+}
+.rule{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.icon{
+  background-color: orange;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 50px 20px;
+  position: relative;
+}
+.icon i{
+  border: 60px solid white;
+  background-color: white;
+  width: 80px;
+  height: 80px;
+  border-radius:50%;
+  color: orange;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  
+}
+.stTail>:first-child div{
+  display: flex;
+  flex-direction: column;
+}
+.blog{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 .blog>div{
   padding: 20px;
+  
 }
-.blog p{
+.blog img{
+  position: relative;
+}
+.blog>div>div{
   text-align: justify;
+  width: 374px;
+  height: 30%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 26px;
 }
-.rule{
-  margin-top: 20px;
-  display: inline-flex;
-  margin-bottom: 40px;
+.blog p:first-child{
+  color: white;
+  position: absolute;
+  bottom: 35px;
+  margin-bottom: 10px;
+  margin-left: 15px;
 }
-.rule>div>div{
-  border: 80px solid orange;
-  border-radius: 100%;
-  margin: 50px 20px;
+.blog p:nth-child(2){
+  color: orange;
+  position: absolute;
+  bottom: 15px;
+  margin-left: 15px;
 }
+
+
 

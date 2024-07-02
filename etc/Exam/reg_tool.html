@@ -26,32 +26,46 @@
       </table>
     </div>
     <div class="second">
-      <h3>
-        기본정보
-      </h3>
+      <div>
+        <h3>
+          기본정보
+        </h3>
+        <p> 
+          <span>*</span>필수입력사항
+        </p>
+      </div>
       <table>
         <tr>
-          <td>아이디</td>
+          <td>
+            아이디
+            <span>*</span>
+          </td>
           <td>
             <input type="text" name="id">
             (영어소문자/숫자, 4~16자)
           </td>
         </tr>
         <tr>
-          <td>비밀번호</td>
+          <td>
+            비밀번호<span>*</span>
+          </td>
           <td>
             <input type="text" name="pw">
             (영어 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)
           </td>
         </tr>
         <tr>
-          <td>비밀번호 확인</td>
+          <td>
+            비밀번호 확인<span>*</span>
+          </td>
           <td>
             <input type="text" name="repw">
           </td>
         </tr>
         <tr>
-          <td>이름</td>
+          <td>
+            이름<span>*</span>
+          </td>
           <td>
             <input type="text" name="name">
           </td>
@@ -61,12 +75,10 @@
             <td>
               <input type="text" name="addr1"> 
               <input type="button" value="우편번호 >">
-            </td>
-            <td>
+              <br>
               <input type="text" name="addr2">
               기본주소
-            </td>
-            <td>
+              <br>
               <input type="text" name="addr3">
               나머지주소(선택입력가능)
             </td>
@@ -85,7 +97,9 @@
           </td>
         </tr>
         <tr>
-          <td>휴대전화</td>
+          <td>
+            휴대전화<span>*</span>
+          </td>
           <td>
             <select name="stPh">
               <option value="010">010</option>
@@ -98,7 +112,9 @@
           </td>
         </tr>
         <tr>
-          <td>SMS 수신여부</td>
+          <td>
+            SMS 수신여부<span>*</span>
+          </td>
           <td>
             <input type="checkbox" name="sms">동의함 
             <br>
@@ -136,7 +152,9 @@
       </h3>
       <table>
         <tr>
-          <td>생년월일</td>
+          <td>
+            생년월일<span>*</span>
+          </td>
           <td>
             <input type="number" name="year">년
             <input type="number" name="month">월

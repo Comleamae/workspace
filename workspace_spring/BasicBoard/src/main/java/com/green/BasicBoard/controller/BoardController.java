@@ -56,10 +56,12 @@ public class BoardController {
         return "redirect:/";
     }
 
-    //게시글 상세 조회창으로 가는 컨트롤러
+    //조회수를 증가시키고 게시글 상세 조회창으로 가는 컨트롤러
     @GetMapping("/goDetail")
     public String goDetail(BoardVO boardVO, Model model){
+        //조회수 증가
         boardService.updateView(boardVO.getBoardNum());
+
         BoardVO vo= boardService.detailBoard(boardVO);
         model.addAttribute("boards", vo);
         return "board_detail";
