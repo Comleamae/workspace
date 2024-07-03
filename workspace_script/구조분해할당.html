@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>구조분해할당(리액트에서 사용 / 배열과 객체에 사용하는 문법)</h2>
+
+  <script>
+    //--------------- 배열에서의 구조분해할당-------------------//
+
+    //배열에 저장된 값을 받아온느 일반적인 방법
+    const arr1 = [1, 2, 3];
+    const a = arr1[0];
+    const b = arr1[1];
+
+    //배열에 저장된 값을 구조분해할당 문법으로 받아오기
+    const arr2 = [1, 2, 3];
+    const [a1, b1, c1] = arr2; //a1=1, b1=2, c1=3
+    console.log(`a1=${a1}`);
+
+    //생성하는 변수의 개수가 다른 경우 ->순서대로 들어감
+    const arr3 = [1, 2, 3];
+    const [a2, b2] = arr3; //a2=1, b2=2
+    const [a3, b3, c3, d4] = arr3; //a3=1, b3=2, c3=3 
+    console.log(`d4 = ${d4}`); //d4=정의되지 않음
+
+    //---------------객체에서의 구조분해할당------------//
+    const board = {
+      //key : value
+      boardNum : 1,
+      title : '게시글1',
+      readCnt : 5
+    };
+
+    console.log(board);
+    console.log(board.title);//게시글1
+    console.log(board['title']);//게시글1
+
+    //객체 안의 데이터 변경
+    board.boardNum = 2;
+    board.title = '게시글2';
+    board['readCnt'] = 3;
+    
+    console.log(board)
+
+    const member ={
+      name :'kim',
+      age : 20,
+      tel : '010-1111-2222'
+    };
+    
+    //객체의 데이터를 변수에 저장하는 일반적인 방법
+    const n1 = member.name; //'kim'
+    const t1 = member.tel; //'010-1111-2222'
+
+    //객체의 구조분해할당 -> 해당된 key값으로 값이 들어감
+    //객체의 구조분해할당을 위해 만드는 변수는 객체의 key값과 일치
+    const {name, age, tel} = member;
+    console.log(`name = ${name}`);
+
+    const {nn, aa, tt} =member;
+    console.log(`nn = ${nn}`);//key 불일치로 데이터 안받아옴
+
+    const student = {
+      stuNum : 1,
+      korScore : 90,
+      engScore : 80
+    };
+
+    const {stuNum, korScore, mathScore} = student;
+
+    //객체의 구조분해할당 문법에서 변수명을 변경하는 문법
+          //key에 든 값을 :뒤의 이름을 붙여 옮겨준다
+    const {stuNum : num, korScore : kor} = student;
+    console.log(`num = ${num}`);
+
+    const eng = student/engScore;
+
+  </script>
+</body>
+</html>
