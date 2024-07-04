@@ -19,7 +19,7 @@
             회원구분
           </td>
           <td>
-            <input type="radio" id="contry">개인회원
+            <input type="radio" id="contry" checked>개인회원
             <input type="radio" id="contry">외국인회원(foreigner)
           </td>
         </tr>
@@ -72,7 +72,7 @@
         </tr>
         <tr>
           <td>주소</td>
-            <td>
+            <td class="addr">
               <input type="text" name="addr1"> 
               <input type="button" value="우편번호 >">
               <br>
@@ -85,7 +85,7 @@
         </tr>
         <tr>
           <td>일반전화</td>
-          <td>
+          <td class="tel1">
             <select name="stNum">
               <option value="02">02</option>
               <option value="052">052</option>
@@ -100,7 +100,7 @@
           <td>
             휴대전화<span>*</span>
           </td>
-          <td>
+          <td class="tel2">
             <select name="stPh">
               <option value="010">010</option>
               <option value="011">011</option>
@@ -138,9 +138,9 @@
           <td>평생회원</td>
           <td>
             <input type="radio" id="eten">동의함
-            <input type="radio" id="eten">동의안함
+            <input type="radio" id="eten" checked>동의안함
             <br>
-            -평생회원으로 가입하시면 <span>스타일맨</span> 회원 탈퇴시까지는 휴면회원으로 전환되지 않으면, 고객님의 개인정보가 탈퇴시까지 안전하게 보관됩니다. <br>
+            -평생회원으로 가입하시면 <span style="color: black; font-weight: bolder;">스타일맨</span> 회원 탈퇴시까지는 휴면회원으로 전환되지 않으면, 고객님의 개인정보가 탈퇴시까지 안전하게 보관됩니다. <br>
             -지금 평생회원으로 가입하시면 쿠폰혜택을 들비니다. (쿠폰혜택을 받으신 경우, 3개월간 평생회운을 유지하셔야 합니다.)
           </td>
         </tr>          
@@ -155,12 +155,12 @@
           <td>
             생년월일<span>*</span>
           </td>
-          <td>
+          <td class="birth">
             <input type="number" name="year">년
             <input type="number" name="month">월
             <input type="number" name="day">일
-            <input type="radio" id="date"> 양력
-            <input type="radio" id="date"> 음력
+            <input type="radio" class="date" checked> 양력
+            <input type="radio" class="date"> 음력
             (14세 미만 회원가입을 제한하고 있습니다.)
           </td>
         </tr>

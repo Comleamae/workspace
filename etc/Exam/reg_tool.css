@@ -1,19 +1,28 @@
 td{
-  border: 1px solid black;
+  border: 1px solid gray;
   padding: 10px;
+  outline: none;
+  box-shadow: gray;
 }
 tr{
   padding: 10px;
+  outline: none;
 }
 tr td:first-child{
   background-color: lightgray;
   width: 150px;
+  font-weight: bolder;
+}
+input{
+  outline: none;
 }
 span{
   color: red;
   padding: 5px;
 }
-
+.second>div>p{
+  margin-top: 50px;
+}
 .container{
   margin:0 auto;
   width: 1000px;
@@ -30,12 +39,20 @@ span{
   width: 100%;
   height: 20%;
 }
-.first>h3{
+h3{
+  margin-top: 30px;
   margin-bottom: 20px;
 }
-
+.addr>:first-child{
+  width: 100px;
+}
+.addr>:nth-child(4){
+  width: 500px;
+}
+.addr>:nth-child(6){
+  width: 500px;
+}
 .second{
-  
   width: 100%;
   height: 60%;
   
@@ -49,4 +66,25 @@ span{
   margin: 20px;
   width: 100%;
   height: 30%;
+}
+.third > table{
+  width: 100%;
+}
+.birth :nth-child(1){
+  width: 80px;
+}
+.birth :nth-child(2){
+  width: 80px;
+}
+.birth :nth-child(3){
+  width: 80px;
+}
+.tel1 :nth-child(3){
+  width: 80px;
+}
+.tel1 input{
+  width: 80px;
+}
+.tel2 input{
+  width: 80px;
 }

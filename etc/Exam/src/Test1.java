@@ -48,6 +48,6 @@ public class Test1 {
                 min = num1;
             }
         }
-
+        System.out.printf("큰 순서대로 "+ max +" " + mid + " " + min);
     }
 }

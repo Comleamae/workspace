@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="addNum()">
+    클릭하면 값바뀜
+  </button>
+
+  <div id="result"></div>
+
+  <script>
+    let cnt = 0;
+
+    document.querySelector('#result').textContent = cnt;
+
+    function addNum(){
+      cnt = cnt + 1
+      document.querySelector('#result').textContent = cnt;
+    }
+  </script>
+</body>
+</html>

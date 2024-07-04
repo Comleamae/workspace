@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="start" class="java">
+    <div>
+      <div>떡볶이</div>
+    </div>
+    <div>
+      <div>김밥</div>
+      <div>순대</div>
+    </div>
+    <div>
+      <!-- 시작에서부터 id가 start인 태그의 class 속성값을 출력 -->
+      <div id="second">튀김</div>
+    </div>
+  </div>
+  
+  <script>
+    //1번
+    const start = document.querySelector('#start')
+    //start의 첫번째 자식의 자식들
+    const target = start.children[1].children
+
+    for(let i = 0; i < target.length; i++){
+      console.log(target[i].textContent);
+    }
+
+    //2-1번
+    const second = document.querySelector('#second')
+    const target2 = second.parentElement.parentElement
+    console.log(target2.className);
+
+    //2-2번
+    //선택한 태그를 감싸는 가장 가까운 태그를 찾아감
+    second.closest('#start')
+
+    
+  </script>
+</body>
+</html>

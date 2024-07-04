@@ -10,6 +10,10 @@ ul{
 }
 li{
   margin: 20px;
+  cursor: pointer;
+}
+li:hover{
+  color: orange;
 }
 .stHeader{
   width: 100%;
@@ -19,22 +23,27 @@ li{
   margin-bottom: 40px;
 }
 .seachForm{
-  position: relative;
+  position: relative
 }
 .stHeader input{
   height: 40px;
   width: 500px;
+  outline: none;
 }
 .stHeader i{
   color: orange;
   position: absolute;
   font-size: 1.5rem;
-  right: 486px;
   margin-top: 9px;
+  right: 15px;
+  cursor: pointer;
 }
 .stContent{
   margin-bottom: 150px;
   position: relative;
+}
+.box{
+  text-align: center;
 }
 .slide{
   background-image: url(./slide1.jpg);
@@ -86,8 +95,9 @@ li{
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  margin: 50px 20px;
+  margin: 60px 30px;
   position: relative;
+  left: 70px;
 }
 .icon i{
   background-color: white;
@@ -128,6 +138,9 @@ li{
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 26px;
 }
+.blog>div>div:hover{
+  cursor: pointer;
+}
 .blog p:first-child{
   color: white;
   position: absolute;
@@ -141,6 +154,9 @@ li{
   bottom: 15px;
   margin-left: 15px;
 }
-
+.textbox{
+  margin-top: 20px;
+  font-size: 0.8rem;
+}
 
 
