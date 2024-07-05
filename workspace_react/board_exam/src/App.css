@@ -36,23 +36,23 @@
     transform: rotate(360deg);
   }
 }
-
-.blog-nav{
-  display: flex;
-  background-color: black;
-  color: white;
-  padding-left: 20px;
+.container{
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
-.list{
-  text-align: left;
-  padding-left: 20px;
-  border-bottom: 1px solid gray;
+table{
+  width: 100%;
+  border:1px solid black;
+  border-collapse: collapse;
+  text-align: center;
 }
 
-.detail{
-  background-color: #eeeeee;
-  text-align: left;
-  padding: 20px;
-  margin-top: 10px;
+tr, td{
+  border: 1px solid black;
+}
+
+td{
+  padding: 6px;
 }
