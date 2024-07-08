@@ -18,7 +18,8 @@ function Board(props){
             </div>
             <button type="button" onClick={(e)=>{
               const copyTitle = [...props.titles]
-              copyTitle.slice(i, 1)
+              copyTitle.splice(i,1)
+              console.log(copyTitle)
               props.setTitles(copyTitle)
             }}>삭제</button>
           </div>

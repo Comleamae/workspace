@@ -35,7 +35,7 @@ function App() {
         <h3>My Blog</h3>
       </div>
       <Board titles={titles} setTitles={setTitles} likeCnts={likeCnts} setCnts={setCnts}/>
-      <Insert titles={titles} likeCnts={likeCnts} setCnts={setCnts}/>
+      <Insert titles={titles} setCnts={setCnts}/>
       {
         isShow ? <Detail/>: null
       }
