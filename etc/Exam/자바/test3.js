@@ -9,7 +9,7 @@ function setTable(){
   for(let i = 1; i<=num1; i++){
     newTr+=`<tr>`
     
-    for(let j=1; j<num2; j++){
+    for(let j=1; j<=num2; j++){
       newTr+=`<td>${i}행${j}열</td>`
     }
     newTr+=`</tr>`

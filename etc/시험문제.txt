@@ -1,6 +1,0 @@
-7/9 1~8교시
-
-1~2교시 html+css
-3~4교시 javascript
-5~6교시 java
-7~8교시 java
