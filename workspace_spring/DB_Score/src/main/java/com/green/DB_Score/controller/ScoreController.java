@@ -38,7 +38,6 @@ public class ScoreController {
     public String insert(ScoreVO scoreVO, Model model){
 
         ScoreVO vo = new ScoreVO();
-
         vo.setStuNum(scoreVO.getStuNum());
         vo.setStuName(scoreVO.getStuName());
         vo.setKorScore(scoreVO.getKorScore());
