@@ -52,17 +52,17 @@ public class Bank {
 
     //2. 매개변수로 전달되는 예금액을 초과하는 예금액을 가진 회원들의 목록을 리턴하는
     //메서드를 정의하시오.
-    List<Client> overClient(int balance){
-        List<Client> list = new ArrayList<>();
-        int index = 0;
-        for(int i = 0; i< clientList.size(); i++){
-            if( balance <= clientList.get(i).getAccInfo(balance)){
-                
-            }
-
-        }
-        return list;
-    }
+//    List<Client> overClient(int balance){
+//        List<Client> list = new ArrayList<>();
+//        int index = 0;
+//        for(int i = 0; i< clientList.size(); i++){
+//            if( balance <= clientList.get(i).getAccInfo(balance)){
+//
+//            }
+//
+//        }
+//        return list;
+//    }
 
 
     // * 위 메서드를 호출하는 main 메서드를 가진 클래스는 구현할 필요 없습니다.
