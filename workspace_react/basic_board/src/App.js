@@ -6,32 +6,30 @@ import Detail from './Detail';
 import Form from './Form';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import InputTest from './InputTest';
 
 
 
 function App() {
-
-  const[board_list, setBoard_List] = useState(data)
+  //게시글 목록
+  const [boardList, setBoardList] = useState(data)
 
   return (
     <div className="App">
 
       <Routes>
         {/* 게시글 목록페이지 */}
-        <Route path='/' element={<ListMain board_list={board_list}/>}></Route>
+        <Route path='/' element={<ListMain board_list={boardList}/>}></Route>
 
         {/* 게시글 상세 정보 페이지 */}
-        <Route path='/detail/:boardNum' element={<Detail board_list={board_list} setBoard_List={setBoard_List}/>}></Route>
-        
+        <Route path='/detail/:boardNum' element={<Detail board_list={boardList} setBoard_List={setBoardList}/>}></Route>
+
         {/* 게시글 등록페이지 */}
-        <Route path='/writeForm' element={<Form board_list={board_list} setBoard_List={setBoard_List}/>}></Route>
+        <Route path='/writeForm' element={<Form board_list={boardList} setBoard_List={setBoardList}/>}></Route>
+
+        <Route path='/test' element={<InputTest/>}></Route>
       </Routes>
-
-      
-      
     </div>
-
-    
   );
 }
 

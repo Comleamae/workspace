@@ -18,8 +18,23 @@ const Detail = ({board_list, setBoard_List})=>{
   });
 
   const goDelete = () => {
-    setBoard_List(copyList.splice(boardNum))
+    copyList.forEach((e, i)=>{
+      if(boardNum==e.boardNum)
+        copyList.splice(i, 1);
+        setBoard_List(copyList)
+    })
   }
+
+
+  //const arr = [1,2,3];
+  //const result =  arr.splice(0, 1);
+  //splice 함수 자체를 리턴할 경우 배열에서 잘라낸 부분을 리턴한다
+  //=>따로 잘라내고 남은 부분을 리턴해주어야 원하는 결과를 얻을 수 있다.
+
+
+  //result = [1]
+  //arr = [2,3]
+
 
   return(
     <div className="detail">
@@ -46,7 +61,7 @@ const Detail = ({board_list, setBoard_List})=>{
             </div>
       <button type="button">뒤로가기</button>
       <button type="button" onClick={(e)=>{
-        goDelete()
+        goDelete(e)
         navigate(`/`)
       }}>삭제</button>
     </div>
