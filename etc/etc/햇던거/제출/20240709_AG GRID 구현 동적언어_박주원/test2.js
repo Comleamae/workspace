@@ -4,15 +4,15 @@ function setAvgAge(){
   const totalAgeSelect = document.querySelectorAll('.ageTd')
   let totalAge = 0;
   let avgAge = 0;
-  let index =0;
+
   totalAgeSelect.forEach(function(tdAge, i){
     totalAge = totalAge + Number(tdAge.textContent)
-    index=index+i
   })
-  avgAge = totalAge/index
+  avgAge = totalAge/totalAgeSelect.length
   console.log(avgAge)
   
   //값이 들어갈 태그 선택
   const result= document.querySelector('#resultTd')
-  result.innerHTML = avgAge
+  document.querySelector('#resultTd').textContent = avgAge
+  //result.innerHTML = avgAge
 }

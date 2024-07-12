@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="86498446-014b-458d-aa1e-c0e476828d75" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/etc/햇던거/제출/20240709_AG GRID 구현 동적언어_박주원/test2.js" beforeDir="false" afterPath="$PROJECT_DIR$/etc/햇던거/제출/20240709_AG GRID 구현 동적언어_박주원/test2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etc/햇던거/제출/20240709_AG GRID 구현 동적언어_박주원/test3.js" beforeDir="false" afterPath="$PROJECT_DIR$/etc/햇던거/제출/20240709_AG GRID 구현 동적언어_박주원/test3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etc/햇던거/제출/20240709_AG GRID 구현 동적언어_박주원/test4.js" beforeDir="false" afterPath="$PROJECT_DIR$/etc/햇던거/제출/20240709_AG GRID 구현 동적언어_박주원/test4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace_react/shop/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace_react/shop/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace_react/shop/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace_react/shop/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace_react/shop/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace_react/shop/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace_react/shop/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace_react/shop/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace_react/shop/src/Book.js" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace_react/shop/src/Book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace_react/shop/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace_react/shop/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace_react/생성.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace_react/생성.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2j60rL6JyPgMqtOtC8ywtRvzBP7" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/01-STUDY/dev/workspace/etc"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="86498446-014b-458d-aa1e-c0e476828d75" name="Changes" comment="" />
+      <created>1720692416899</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720692416899</updated>
+    </task>
+    <servers />
+  </component>
+</project>

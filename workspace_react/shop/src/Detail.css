@@ -1,0 +1,24 @@
+
+.selectOne{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.item-info{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.item-info>img{
+  width: 60%;
+}
+.item-info>div{
+  width: 40%;
+}
+.intro{
+  text-align: center;
+}
+

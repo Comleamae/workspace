@@ -1,0 +1,28 @@
+  //구조분해할당
+
+  //1)배열
+  const arr1 =[1, 2, 3]
+  const [a, b, c] = arr1 ///[1, 2, 3] 배열이므로 순서에 따라
+
+  //2)객체
+  const obj ={
+    stuNum : 1,
+    stuName : 'hong'
+  }
+  const {stuNum, stuName} = obj // 객체 이기에 key에 맞춰 값을 넣어줌
+
+  //3)
+  const member = {
+    no:1,
+    name:'kim',
+    addr:'울산',
+    score:80
+  }//no=1, score=80
+  
+  abc(member);
+
+  function abc({name, addr}){
+    name; //'kim'
+    addr;//'울산'
+  }//const {name, addr} = memeber
+  //{kim, '울산'}

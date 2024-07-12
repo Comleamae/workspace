@@ -7,38 +7,24 @@ public class Test4 {
         Scanner sc = new Scanner(System.in);
         System.out.println("1~999사이의 숫자를 입력하시오");
         int num = sc.nextInt();
-
+        //백의 자리 숫자
         int hNum = num/100;
-        int tNum = num/10;
+        //십의 자리 숫자
+        int tNum = (num%100)/10;
+        //일의 자리 숫자
         int oNum = num%10;
 
         int cnt = 0;
 
-        if(num<10){
-            if(tNum%3 == 0)
-                cnt++;
+        if(hNum == 3 || hNum == 6 || hNum ==9){
+            cnt++;
         }
-        else if (num<100) {
-            if(tNum%3 == 0) {
-                cnt++;
-            }
-            if(oNum%3 == 0){
-                cnt++;
-            }
+        if(tNum == 3 || tNum == 6 || tNum ==9){
+            cnt++;
         }
-        else{
-            if(hNum%3 == 0){
-                cnt++;
-            }
-            if(tNum%3 == 0){
-                cnt++;
-            }
-            if(oNum%3 == 0){
-                cnt++;
-            }
-
+        if(oNum == 3 || oNum == 6 || oNum ==9){
+            cnt++;
         }
-
         System.out.println("박수"+ cnt+"번");
 
     }
