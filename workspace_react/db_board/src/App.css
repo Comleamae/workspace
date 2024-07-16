@@ -1,0 +1,11 @@
+.App{
+  text-align: center;
+}
+
+.btn-div{
+  margin: 10px;
+}
+
+table, tr, td{
+  border:1px solid black;
+}

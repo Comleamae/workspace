@@ -1,4 +1,4 @@
-const StuList = () => {
+const StuList = ({stu_List}) => {
   return(
     <>
       <div className="menu">
@@ -31,7 +31,14 @@ const StuList = () => {
             </tr>
           </thead>
           <tbody>
-            
+            {<tr>
+              <td>${stu_List.stuNum}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>}
           </tbody>
         </table>
       </div>

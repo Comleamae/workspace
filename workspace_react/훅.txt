@@ -1,0 +1,21 @@
+hook -> use....
+const [data, setData] = useState('');=>변화하는 변수를 선언
+const params = useParamas();=> 페이지 이동하면서 하나의 값을 가져오기위해
+const navigate = useNavigate();=>페이지 이동하는 라우터 선언
+
+*useEffect(); =>DB에서 데이터 받아올 때 필수적으로 사용함
+해당 컴포넌트가 랜더링되면 마지막에 실행
+컴포넌트의 라이프싸이클(생애주기) 사이에 필요한 기능 추가
+
+mount->최초에 컴포넌트가 생성 
+ex) useEffect(()=>{},[])
+
+update->컴포넌트가 재랜더링(useState)되는 상태 
+ex) useEffect(()=>{},[useState변수명])
+
+unmount->컴포넌트가 사라질 때 
+ex) useEffect(()=>{return(()=>{})},[])
+
+
+
+

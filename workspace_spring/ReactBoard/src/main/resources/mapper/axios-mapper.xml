@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="axiosMapper">
+    <!--데이터베이스의 테이블 에서 조회한 데이터를 자바에 가져올 때-->
+    <!--어떤 자료형에 담아올지 결정-->
+
+    <!--REACT_BOARD 테이블의 조회된 데이터는 BoardVO 자료형을 통해서 가져 옴-->
+    <resultMap id="board" type="com.green.ReactBoard.vo.BoardVO">
+        <!--pk컬럼은 id태그에 넣어서 -->
+        <id property="boardNum" column="BOARD_NUM"/>
+        <result property="boardTitle" column="BOARD_TITLE"/>
+        <result property="boardContent" column="BOARD_CONTENT"/>
+        <result property="boardWriter" column="BOARD_WRITER"/>
+        <result property="createDate" column="CREATE_DATE"/>
+    </resultMap>
+
+    <!--쿼리에 빈값이 없는 데이터 조회-->
+    <select id="getList" resultMap="board">
+        SELECT BOARD_NUM
+            , BOARD_TITLE
+        FROM REACT_BOARD;
+    </select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -18,7 +18,7 @@ public class Client {
         this.accInfo = accInfo;
     }
 
-    //각 필드의 gettet, setter
+    //각 필드의 getter, setter
     public int getClientNumber() {
         return clientNumber;
     }
