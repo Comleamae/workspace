@@ -35,20 +35,37 @@
         FROM REACT_BOARD
         WHERE BOARD_NUM = #{boardNum};
     </select>
+
 	<!--글 등록 쿼리-->
-    <insert id="insertBoard">
-        INSERT INTO
-            REACT_BOARD
-
-        (BOARD_WRITER
-        , BOARD_TITLE
-        , BOARD_CONTENT)
-
-        VALUE
-        (#{boardWriter}
-        , #{boardTitle}
-        , #{boardContent})
+    <insert id="regBoard">
+        INSERT INTO REACT_BOARD
+            (BOARD_WRITER
+            , BOARD_TITLE
+            , BOARD_CONTENT)
+        VALUES
+            (#{boardWriter}
+            , #{boardTitle}
+            , #{boardContent})
     </insert>
+
+    <!--글 삭제 쿼리-->
+    <delete id="deleteBoard">
+        DELETE FROM REACT_BOARD
+        WHERE
+            BOARD_NUM = #{boardNum}
+    </delete>
+
+    <!--글 수정 쿼리-->
+    <update id="updateBoard">
+        UPDATE REACT_BOARD
+        SET
+            BOARD_TITLE = #{boardTitle}
+            BOARD_CONTENT = #{boardContent}
+            CREATE_DATE = #{createDate}
+            BOARD_WRITER = #{boardWriter}
+        WHERE
+            BOARD_NUM = #{boardNum}
+    </update>
 </mapper>
 
 

@@ -30,12 +30,21 @@ public class BoardController {
         return boardService.getOneBoard(boardNum);
     }
 
-    //게시글 등록 폼으로
-    @GetMapping("/regBoardForm")
-    public void regBoardForm(){
+    //글 등록
+    @PostMapping("/regBoard")
+    public void regBoard(@RequestBody BoardVO boardVO){
+       boardService.regBoard(boardVO);
     }
 
-   
+    //글 삭제
+    @DeleteMapping("/deleteBoard/{boardNum}")
+    public void deleteBoard(@PathVariable("boardNum") int boardNum){
+        boardService.deleteBoard(boardNum);
+    }
 
-
+    //글 수정
+    @PutMapping("/updateBoard")
+    public void updateBoard(@RequestBody BoardVO boardVO){
+        boardService.updateBoard(boardVO);
+    }
 }

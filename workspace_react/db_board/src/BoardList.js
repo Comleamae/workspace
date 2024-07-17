@@ -23,7 +23,7 @@ const BoardList = () => {
   
 
   return(
-    <>
+    <div>
       <table>
         <thead>
           <tr>
@@ -43,17 +43,17 @@ const BoardList = () => {
                     <span onClick={()=>{navigate(`/detail/${board.boardNum}`)}}>{board.boardTitle}</span>
                   </td>
                   <td>{board.boardWriter}</td>
-                  <td>{board.boardCreateDate}</td>
+                  <td>{board.createDate}</td>
                 </tr>
               )
             })
           }
         </tbody>
       </table>
-      <button onClick={()=>{
-        navigate('/regBoardForm')
+      <button onClick={(e)=>{
+        navigate('/write')
       }}>글쓰기</button>
-    </>
+    </div>
   )
   
 }

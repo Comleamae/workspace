@@ -33,7 +33,7 @@ public class AxiosController {
     }
 
     //데이터 수정하는 메서드
-    @PutMapping ("/updateBoard")
+    @PutMapping ("/upBoard")
     public BoardVO updateBoard(@RequestBody BoardVO boardVO){
         System.out.println(boardVO);
         //데이터베이스 update 쿼리 실행
