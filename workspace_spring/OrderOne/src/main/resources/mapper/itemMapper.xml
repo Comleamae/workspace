@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="itemMapper">
+    <resultMap id="item" type="com.green.OrderOne.vo.ItemVO">
+        <result column="ITEM_NUM" property="itemNum"/>
+        <result column="ITEM_NAME" property="itemName"/>
+        <result column="ITEM_PRICE" property="itemPrice"/>
+        <result column="SELLER" property="seller"/>
+        <result column="ITEM_INTRO" property="itemIntro"/>
+        <result column="REG_DATE" property="regDate"/>
+    </resultMap>
+	<!--아이템 전체 리스트-->
+    <select id="getAllItem" resultMap="item">
+        SELECT ITEM_NAME
+            , ITEM_PRICE
+            , SELLER
+        FROM ITEM_INFO
+    </select>
+
+    <!--아이템 삽입 매퍼-->
+    <insert id="regItem">
+        INSERT INTO ITEM_INFO
+        ()
+        VALUES
+        ()
+
+    </insert>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

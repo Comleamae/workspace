@@ -17,6 +17,11 @@ public class StudentServiceImpl implements StudentService{
     public List<StudentVO> getAllStu() {
         return sqlSession.selectList("stuMapper.getAllStu");
     }
+    //학생 상세 정보
+    @Override
+    public StudentVO getOneStu(int stuNum) {
+        return sqlSession.selectOne("stuMapper.getOneStu", stuNum);
+    }
 
     //학생 등록
     @Override
@@ -34,6 +39,12 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public StudentVO score(int stuNum) {
         return sqlSession.selectOne("stuMapper.score", stuNum);
+    }
+
+    //성적 수정
+    @Override
+    public void updateScore(StudentVO studentVO) {
+        sqlSession.update("stuMapper.upScore", studentVO);
     }
 
 

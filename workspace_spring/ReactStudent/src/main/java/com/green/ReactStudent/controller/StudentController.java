@@ -17,6 +17,11 @@ public class StudentController {
         return studentService.getAllStu();
     }
 
+    @GetMapping("/oneStu/{stuNum}")
+    public StudentVO getOneStu(@PathVariable("stuNum") int stuNum){
+        return studentService.getOneStu(stuNum);
+    }
+
     @PostMapping("/regStu")
     public void regStu(@RequestBody StudentVO studentVO){
         studentService.regStu(studentVO);
@@ -24,10 +29,13 @@ public class StudentController {
 
     @DeleteMapping("/delStu/{stuNum}")
     public void delStu(@PathVariable("stuNum") int stuNum){
-        System.out.println(stuNum);
         studentService.delStu(stuNum);
     }
 
-    @
+    @PutMapping("/regScore")
+    public void regScore(@RequestBody StudentVO studentVO){
+        studentService.updateScore(studentVO);
+    }
+
 
 }

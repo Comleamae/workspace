@@ -25,6 +25,17 @@
         FROM
             REACT_STUDENT
     </select>
+
+    <!--학생 한명의 상세 정보를 얻어오는 쿼리-->
+    <select id="getOneStu" resultMap="student">
+        SELECT
+            *
+        FROM
+            REACT_STUDENT
+        WHERE
+            STU_NUM = #{stuNum}
+    </select>
+
     <!--학생정보를 등록하는 쿼리-->
     <insert id="regStu">
         INSERT INTO REACT_STUDENT
@@ -33,6 +44,9 @@
         , STU_AGE
         , STU_ADDR
         , STU_TELL
+        , KOR_SCORE
+        , ENG_SCORE
+        , MATH_SCORE
         )
         VALUES
         (
@@ -40,23 +54,41 @@
         , #{stuAge}
         , #{stuAddr}
         , #{stuTell}
+        , 0
+        , 0
+        , 0
         )
     </insert>
+
     <!--학생삭제 쿼리-->
     <delete id="delStu">
         DELETE FROM
             REACT_STUDENT
         WHERE STU_NUM = #{stuNum}
     </delete>
+
 	<!--학생 세부 성적 조회-->
     <select id="score" resultMap="student">
         SELECT
-            KOR_SCORE
+            STU_NUM
+            , KOR_SCORE
             , ENG_SCORE
             , MATH_SCORE
         FROM
             REACT_STUDENT
     </select>
+
+    <!--학생 성적 수정-->
+    <update id="upScore">
+        UPDATE REACT_STUDENT
+        SET
+            KOR_SCORE = #{korScore}
+            , ENG_SCORE = #{engScore}
+            , MATH_SCORE = #{mathScore}
+        WHERE STU_NUM = #{stuNum}
+    </update>
+
+
 </mapper>
 
 

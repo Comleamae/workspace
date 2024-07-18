@@ -1,0 +1,32 @@
+table{
+  width: 100%;
+  
+}
+h3{
+  margin-bottom: 30px;
+}
+table>thead>tr{
+  border-top: 1px solid black;
+  border-bottom: 5px double black;
+  background-color: #eeeeee;
+}
+
+table>thead>tr>td{
+  padding: 6px;
+}
+
+tbody > tr{
+  border-bottom: 1px solid black;
+}
+
+tbody > tr > td{
+  padding: 6px;
+}
+
+tbody > tr:nth-child(even){
+  background-color: #dddddd;
+}
+
+tbody >tr:hover{
+  background-color: #cccccc;
+}

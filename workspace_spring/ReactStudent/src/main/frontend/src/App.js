@@ -8,6 +8,7 @@ import RegStu from './RegStu';
 import DelStu from './DelStu';
 import Score from './Score';
 import ScoreReg from './ScoreReg';
+import StuDetail from './StuDetail';
 
 function App() {
   const navigate = useNavigate()
@@ -46,6 +47,8 @@ function App() {
         <Routes>
           {/* 학생정보조회 */}
           <Route path='/stuAllList' element={<ListAll/>}/>
+          {/* 학생상세정보페이지 */}
+          <Route path='/stuDetail/:stuNum' element={<StuDetail/>}/>
           {/* 학생등록페이지 */}
           <Route path='/stuReg' element={<RegStu/>}/>
           {/* 학생삭제페이지 */}
@@ -53,7 +56,7 @@ function App() {
           {/* 성적관리페이지 */}
           <Route path='/stuScore' element={<Score/>}/>
           {/* 성적입력페이지 */}
-          <Route path='/scoreForm' element={<ScoreReg/>}/>
+          <Route path='/scoreForm/:stuNum' element={<ScoreReg/>}/>
         </Routes>
       </div>
     </div>

@@ -32,16 +32,16 @@ const Score = ()=>{
           {
             stuList.map((stu,i)=>{
               return(
-                <tr>
+                <tr key={i}>
                   <td>
-                    {stu.stuNum}
+                    {i+1}
                   </td>
                   <td>
                     {stu.stuName}
                   </td>
                   <td>
-                    <button type="button" onClick={()=>{
-                      navigate('/scoreForm')
+                    <button type="button" onClick={(e)=>{
+                      navigate(`/scoreForm/${stu.stuNum}`)
                     }}>입력</button>
                   </td>
                 </tr>

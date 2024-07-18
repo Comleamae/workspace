@@ -22,7 +22,7 @@ const DelStu = () => {
     axios
     .delete(`/delStu/${stuNum}`)
     .then((res)=>{
-      navigate('/stuAllList')
+      window.location.reload()
     })
     .catch((error)=>{
       alert('삭제실패')
@@ -45,7 +45,7 @@ const DelStu = () => {
             return(
               <tr key={i}>
                 <td>
-                  {stu.stuNum}
+                  {i+1}
                 </td>
                 <td>
                   {stu.stuName}

@@ -38,10 +38,4 @@ ul span:hover{
   text-align: center;
 }
 
-.content>h3{
-  margin-bottom: 30px;
-}
 
-table, tr, td{
-  border: 1px solid black;
-}

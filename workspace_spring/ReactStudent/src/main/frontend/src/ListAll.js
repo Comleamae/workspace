@@ -1,7 +1,13 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import './ListAll.css'
+import { useNavigate, useParams } from "react-router-dom"
 
 const ListAll = () =>{
+
+  const navigate = useNavigate()
+
+  const params = useParams()
 
   const [stuList,setStuList] = useState([])
 
@@ -32,20 +38,33 @@ const ListAll = () =>{
           </tr>
         </thead>
         <tbody>
-          {stuList.map((e,i)=>{
-            return(
-            <tr key={i}>
-              <td>{e.stuNum}</td>
-              <td>{e.stuName}</td>
-              <td>{e.korScore}</td>
-              <td>{e.engScore}</td>
-              <td>{e.mathScore}</td>
-              <td>
-                {((e.korScore + e.engScore + e.mathScore ) /3.0).toFixed()}
-              </td>
+          { 
+            // 삼항연산자로 if문 사용
+            stuList.length == 0 
+            ? 
+            <tr>
+              <td colSpan={6}>조회된 데이터가 없습니다</td>
             </tr>
-            )
-          })
+            :
+            stuList.map((stu,i)=>{
+              const avg = (stu.korScore + stu.engScore + stu.mathScore ) /3
+              return(
+              <tr key={i}>
+                <td>{i+1}</td>
+                <td>
+                  <span onClick={(e)=>{
+                    navigate(`/stuDetail/${stu.stuNum}`)
+                  }}>{stu.stuName}</span>
+                </td>
+                <td>{stu.korScore}</td>
+                <td>{stu.engScore}</td>
+                <td>{stu.mathScore}</td>
+                <td>
+                  {Math.round(avg*100)/100}
+                </td>
+              </tr>
+              )
+            })
           }
         </tbody>
       </table>
