@@ -18,6 +18,11 @@ public class SalesController {
         return salesService.getSalesList();
     }
 
+    @GetMapping("/one/{modelNum}")
+    SalesVO getOneSales(@PathVariable("modelNum") int modelNum){
+        return salesService.getOneSales(modelNum);
+    }
+
     @PostMapping("/reg")
     void regSales(@RequestBody SalesVO salesVO){
         salesService.regSales(salesVO);

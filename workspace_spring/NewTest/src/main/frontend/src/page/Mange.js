@@ -10,11 +10,8 @@ const Mange = () => {
   useEffect(()=>{
     axios
     .get('/car/list')
-    .then((res)=>{
-      setCarList(res.data)
-    })
-    .catch((error)=>{})
-  }, [])
+    .then((res)=>{setCarList(res.data)})
+    .catch((error)=>{}, [])})
 
   function regData(){
     axios

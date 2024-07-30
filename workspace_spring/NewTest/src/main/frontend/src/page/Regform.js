@@ -4,7 +4,10 @@ import { useNavigate } from 'react-router-dom'
 
 const Regform = () => {
   const[salesList, setSalesList] = useState([])
-  const[salesOne, setSalesOne] = useState({})
+  const[salesOne, setSalesOne] = useState({
+    color:'블랙'
+    , modelNum:1
+  })
   const navigate = useNavigate()
 
   useEffect(()=>{
@@ -12,10 +15,14 @@ const Regform = () => {
     .get('/car/list')
     .then((res)=>{
       setSalesList(res.data)
+      console.log(salesOne)
     })
     .catch((error)=>{
-      console.log(error)})
+      console.log(error)
+    })
   }, [])
+
+  
 
   function regOne(){
     axios
@@ -26,7 +33,8 @@ const Regform = () => {
     })
     .catch((error)=>{
       console.log(error)
-    })
+     
+    }, [])
   }
 
   function changeData(e){
@@ -45,7 +53,7 @@ const Regform = () => {
       <div className='reg-second-div'>
         <div>
           색상
-          <select name='color'value={salesOne.color} onChange={(e)=>{changeData(e)}}>
+          <select name='color' onChange={(e)=>{changeData(e)}}>
             <option>블랙</option>
             <option>화이트</option>
             <option>실버</option>
@@ -54,7 +62,7 @@ const Regform = () => {
         </div>
         <div>
           모델
-          <select name='modelNum' onChange={(e)=>{changeData(e)}}>
+          <select id='modelNum' name='modelNum'onChange={(e)=>{changeData(e)}}>
             {
               salesList.map((sales, i)=>{
                 return(
@@ -67,7 +75,7 @@ const Regform = () => {
       </div>
       <div>
         연락처
-        <input type='text' name='salesTel' onChange={(e)=>{changeData(e)}}/>
+        <input type='text' className='salesTel' name='salesTel' onChange={(e)=>{changeData(e)}}/>
       </div>
       <button type='button' onClick={(e)=>{regOne()}}>등록</button>
     </div>

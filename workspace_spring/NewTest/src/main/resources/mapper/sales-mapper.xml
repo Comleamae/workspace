@@ -19,7 +19,12 @@
         SELECT *
         FROM SALES_INFO
     </select>
-
+    <!--선택된 세일즈 리스트-->
+    <select id="getOneSales" resultMap="sales">
+        SELECT *
+        FROM SALES_INFO
+        WHERE MODEL_NUM = #{modelNum}
+    </select>
     <!--세일즈 추가-->
     <insert id="regSales">
         INSERT INTO SALES_INFO

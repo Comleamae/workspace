@@ -1,14 +1,21 @@
+
 .App {
   width: 80%;
   margin: 0 auto;
   margin-top: 20px;
+ 
 }
 .menu{
   display: flex;
   width: 100%;
   margin: auto;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   margin-left: 150px;
+  padding: 30px;
+}
+.menu td{
+  width: 25%;
+  height: 30px;
 }
 .menu>table{
   width: 80%;
@@ -31,7 +38,9 @@ input{
 select{
   border: 1px skyblue solid;
   margin-left: 15px;
+  text-align: center;
 }
+
 .content{
   width: 60%;
   margin: 0 auto;
@@ -42,6 +51,7 @@ select{
 /* Mange-------------------------------------------------------- */
 .mange{
   margin: 0 auto;
+  margin-left: 60px;
 }
 .mange p{
   margin-right: 70%;
@@ -72,6 +82,7 @@ select{
   width: 60px;
   margin: 0 auto;
   margin-bottom: 50px;
+  margin-left: 1000px;
   background-color: skyblue;
   border: #eeeeee;
   cursor: pointer;
@@ -108,13 +119,19 @@ select{
 /* regForm------------------------------------------------------ */
 .regForm>div{
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .regForm input{
-  width: 60%;
+  width: 35%;
+}
+.salesTel{
+  margin-left: 35px;
 }
 .reg-second-div{
   display: flex;
-  justify-content: space-around;
+  gap: 150px;
+  margin-left: 15px;
 }
 .reg-second-div select{
   width: 150px;
@@ -128,18 +145,21 @@ select{
 .regForm button{
   margin: 0 auto;
   width: 50px;
+  border: #eeeeee;
+  outline: none;
 }
 
 /* sales-------------------------------------------------------- */
 .sales-div{
-  margin: 0 auto;
+  margin: auto;
   width: 100%;
 }
 .sales-div>table{
-  margin: 0 auto;
+  margin: auto;
   border: 2px solid black;
   text-align: center;
   width: 70%;
+  
 }
 .sales-div tr,td{
   border: 2px solid black;

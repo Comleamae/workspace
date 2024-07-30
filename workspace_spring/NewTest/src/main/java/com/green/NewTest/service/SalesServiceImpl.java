@@ -18,6 +18,11 @@ public class SalesServiceImpl implements SalesService {
     }
 
     @Override
+    public SalesVO getOneSales(int modelNum) {
+        return sqlSession.selectOne("salesMapper.getOneSales", modelNum);
+    }
+
+    @Override
     public void regSales(SalesVO salesVO) {
         sqlSession.insert("salesMapper.regSales", salesVO);
     }

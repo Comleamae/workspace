@@ -9,6 +9,8 @@ public interface SalesService {
 
     //세일즈 리스트
     List<SalesVO> getSalesList();
+    //셀렉트 세일즈
+    SalesVO getOneSales(int modelNum);
     //세일즈 추가
     void regSales(SalesVO salesVO);
     //모든 리스트
