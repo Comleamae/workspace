@@ -11,6 +11,12 @@ import ScoreReg from './ScoreReg';
 import StuDetail from './StuDetail';
 
 function App() {
+  //api라는 이름으로 apis에서 빼낸 요소들을 부름
+  // api.myName
+  // api.myAge
+  // api.myPrint
+  // api.myPrint2()
+  
   const navigate = useNavigate()
 
   return (

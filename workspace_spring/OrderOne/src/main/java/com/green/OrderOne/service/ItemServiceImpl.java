@@ -16,4 +16,14 @@ public class ItemServiceImpl implements ItemService{
     public List<ItemVO> getAllItem() {
         return sqlSession.selectList("itemMapper.getAllItem");
     }
+
+    @Override
+    public ItemVO getOneItem(int itemNum) {
+        return sqlSession.selectOne("itemMapper.getOneItem", itemNum);
+    }
+
+    @Override
+    public void regItem(ItemVO itemVO) {
+        sqlSession.insert("itemMapper.regItem", itemVO);
+    }
 }

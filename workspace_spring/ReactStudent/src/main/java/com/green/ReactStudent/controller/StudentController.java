@@ -36,6 +36,7 @@ public class StudentController {
     public void regScore(@RequestBody StudentVO studentVO){
         studentService.updateScore(studentVO);
     }
+    
 
 
 }

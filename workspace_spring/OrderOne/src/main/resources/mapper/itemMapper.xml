@@ -13,20 +13,34 @@
     </resultMap>
 	<!--아이템 전체 리스트-->
     <select id="getAllItem" resultMap="item">
-        SELECT ITEM_NAME
-            , ITEM_PRICE
-            , SELLER
+        SELECT *
         FROM ITEM_INFO
+    </select>
+
+    <!--아이템 하나-->
+    <select id="getOneItem" resultMap="item">
+        SELECT *
+        FROM ITEM_INFO
+        WHERE ITEM_NUM = #{itemNum}
     </select>
 
     <!--아이템 삽입 매퍼-->
     <insert id="regItem">
         INSERT INTO ITEM_INFO
-        ()
+        ( ITEM_NAME
+        , ITEM_PRICE
+        , SELLER
+        , ITEM_INTRO
+        )
         VALUES
-        ()
-
+        (#{itemName}
+        , #{itemPrice}
+        , #{seller}
+        , #{itemIntro}
+        )
     </insert>
+
+    <!--주문하기매퍼-->
 
 </mapper>
 

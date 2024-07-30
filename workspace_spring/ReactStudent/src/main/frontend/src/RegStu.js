@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import './RegStu.css'
+import { getInsertStu } from "./apis"
 
 const RegStu = () =>{
   

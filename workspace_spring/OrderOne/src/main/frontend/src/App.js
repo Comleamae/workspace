@@ -3,6 +3,8 @@ import './App.css';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import ItemInfo from './ItemInfo';
 import RegItem from './RegItem';
+import ItemOrder from './ItemOrder';
+import OrderList from './OrderList';
 
 function App() {
   const navigate = useNavigate()
@@ -39,9 +41,9 @@ function App() {
           {/* 상품등록 */}
           <Route path='/regItem' element={<RegItem/>}/>
           {/* 상품주문 */}
-          <Route path='/orderItem' element={<ItemInfo/>}/>
+          <Route path='/orderItem' element={<ItemOrder/>}/>
           {/* 주문목록*/}
-          <Route path='/orderList' element={<ItemInfo/>}/>
+          <Route path='/orderList' element={<OrderList/>}/>
         </Routes>
       </div>
     </div>

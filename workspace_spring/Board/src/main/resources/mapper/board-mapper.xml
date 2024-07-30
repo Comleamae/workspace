@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="boardMapper">
+    <resultMap id="board" type="com.green.Board.vo.BoardVO">
+        <id column="BOARD_NUM" property="boardNum"/>
+        <result column="TITLE" property="title"/>
+        <result column="CONTENT" property="content"/>
+        <result column="MEM_ID" property="memId"/>
+        <result column="CREATE_DATE" property="createDate"/>
+    </resultMap>
+	<!--전체 게시글 리스트 얻기-->
+    <select id="getAllBoard" resultMap="board">
+        SELECT *
+        FROM BOARD
+        <!--.equals(""):안의 ""는 무조건 ""를 사용해야한다-->
+        <if test='searchValue!=null and !searchValue.equals("")'>
+            WHERE ${searchType} LIKE CONCAT('%', #{searchValue}, '%')
+        </if>
+        ORDER BY CREATE_DATE DESC
+    </select>
+    <!--게시글 하나 상세보기-->
+    <select id="getOneBoard" resultMap="board">
+        SELECT *
+        FROM BOARD
+        WHERE BOARD_NUM = #{boardNum}
+    </select>
+    <!--게시글 추가-->
+    <insert id="regBoard">
+        INSERT INTO BOARD
+        (TITLE
+        , CONTENT
+        , MEM_ID
+        )
+        VALUES
+        (#{title}
+        , #{content}
+        , #{memId}
+        )
+    </insert>
+    <!--게시글 삭제-->
+    <delete id="deleteBoard">
+        DELETE FROM BOARD
+        WHERE BOARD_NUM = #{boardNum}
+    </delete>
+    <!--게시글 수정-->
+    <update id="updateBoard">
+        UPDATE BOARD
+        SET TITLE = #{title}
+            , CONTENT = #{content}
+        WHERE BOARD_NUM = #{boardNum}
+    </update>
+    <!--검색된 게시글 쿼리-->
+    <!--%검색어%:검색어를 포함한 글자 탐색-->
+    <!--%검색어:검색어를 포함한 글자 탐색-->
+    <!--검색어%:검색어를 포함한 글자 탐색-->
+    <!--_검색어_:검색어를 포함한 세자리 글자 탐색-->
+    <!--_검색어:앞에 한글자를 포함하고 검색어를 포함한 단어 검색-->
+    <select id="searchOne" resultMap="board">
+        SELECT BOARD_NUM
+            , TITLE
+            , MEM_ID
+            , CREATE_DATE
+        FROM BOARD
+        <!--CONCAT:문자열 안에 있는 #{}는 변수로 인식하지 못하기에 나눠서 선언해주는 방법-->
+        <!--${}:리액트에서 받아온 값을 경우에 따라 변수로서 기능할 수 있도록 도와줌-->
+        <!--#{}:프로그램에서 해석시 ''가 붙어서 나온다 => 문자열로 해석-->
+        WHERE ${searchType} LIKE CONCAT('%', #{searchValue}, '%')
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

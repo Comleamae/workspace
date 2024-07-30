@@ -3,7 +3,41 @@
 
 <!-- 해당 파일에 모든 쿼리문을 작성 -->
 <mapper namespace="orderMapper">
-	
+	<resultMap id="order" type="com.green.OrderOne.vo.OrderVO">
+        <result column="ORDER_NUM" property="orderNum"/>
+        <result column="BUY_ITEM_NAME" property="buyItemName"/>
+        <result column="BUY_ITEM_PRICE" property="buyItemPrice"/>
+        <result column="BUYER" property="buyer"/>
+        <result column="BUY_CNT" property="buyCnt"/>
+        <result column="BUY_PRICE" property="buyPrice"/>
+        <result column="BUY_DATE" property="buyDate"/>
+    </resultMap>
+
+    <select id="getAllOrder" resultMap="order">
+        SELECT *
+        FROM ORDER_INFO
+    </select>
+
+    <select id="getOneOrder" resultMap="order">
+        SELECT *
+        FROM ORDER_INFO
+        WHERE ORDER_NUM = #{orderNum}
+    </select>
+
+    <insert id="regOrder">
+        INSERT INTO ORDER_INFO
+        (ORDER_NAME
+        , BUY_ITEM_PRICE
+        , BUYER
+        , BUY_CNT
+        )
+        VALUES
+        (#{orderName}
+        , #{buyItemPrice}
+        , #{buyer}
+        , #{buyCnt}
+        )
+    </insert>
 </mapper>
 
 

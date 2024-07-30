@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import { getOne, getScore } from "./apis"
 
 const StuDetail = ()=>{
   const navigate = useNavigate()
@@ -9,8 +10,7 @@ const StuDetail = ()=>{
   const avg = (stu.korScore+stu.engScore+stu.mathScore)/3
 
   useEffect(()=>{
-    axios
-    .get(`/oneStu/${params.stuNum}`)
+    getOne(params.stuNum)
     .then((res)=>{
       setStu(res.data)
     })

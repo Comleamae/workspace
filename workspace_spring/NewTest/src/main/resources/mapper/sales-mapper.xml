@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="salesMapper">
+    <resultMap id="sales" type="com.green.NewTest.vo.SalesVO">
+        <id column="SALES_NUM" property="salesNum"/>
+        <result column="SALES_NAME" property="salesName"/>
+        <result column="SALES_TEL" property="salesTel"/>
+        <result column="COLOR" property="color"/>
+        <result column="SALES_DATE" property="salesDate"/>
+        <result column="MODEL_NUM" property="modelNum"/>
+        <!--1대1 대응 vo에 추가적으로 불러올 객체를 생성해주고 -->
+        <association property="carVO" resultMap="carMapper.car"/>
+    </resultMap>
+
+    <!--전체 세일즈 리스트-->
+    <select id="getSalesList" resultMap="sales">
+        SELECT *
+        FROM SALES_INFO
+    </select>
+
+    <!--세일즈 추가-->
+    <insert id="regSales">
+        INSERT INTO SALES_INFO
+        (SALES_NAME
+        , COLOR
+        , MODEL_NUM
+        , SALES_TEL
+        )
+        VALUES
+        (#{salesName}
+        , #{color}
+        , #{modelNum}
+        , #{salesTel}
+        )
+    </insert>
+    <!--조인을 사용할 경우 pk값을 추가적으로 부를 것-->
+    <!--카와 세일즈 가져오기-->
+    <select id="getAllList" resultMap="sales">
+        SELECT SALES_NAME
+            , SALES_TEL
+            , SALES_DATE
+            , COLOR
+            , MODEL_NAME
+            , PRICE
+            , SALES_NUM
+        FROM CAR_INFO C, SALES_INFO B
+        WHERE C.MODEL_NUM = B.MODEL_NUM
+        ORDER BY SALES_DATE DESC
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

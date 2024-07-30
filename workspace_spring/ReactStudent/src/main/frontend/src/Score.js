@@ -1,14 +1,14 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import * as api from './apis'
 
 const Score = ()=>{
   const navigate = useNavigate()
   const [stuList, setStuList] = useState([])
 
   useEffect(()=>{
-    axios
-    .get('/stuList')
+    api.getStuList()
     .then((res)=>{
       setStuList(res.data)
     })

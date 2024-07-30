@@ -2,18 +2,17 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import './ListAll.css'
 import { useNavigate, useParams } from "react-router-dom"
+//import * as api from './apis' //전체 가져오기
+import {getStuList} from './apis' //일부 가져오기
 
 const ListAll = () =>{
 
   const navigate = useNavigate()
 
-  const params = useParams()
-
   const [stuList,setStuList] = useState([])
 
   useEffect(()=>{
-    axios
-    .get('/stuList')
+    getStuList()
     .then((res)=>{
       setStuList(res.data)
     })

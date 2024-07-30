@@ -1,0 +1,153 @@
+.App {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.menu{
+  display: flex;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 100px;
+  margin-left: 150px;
+}
+.menu>table{
+  width: 80%;
+  text-align: center;
+}
+.menu>table>thead>tr>td{
+  border: 1px solid white;
+  background-color: skyblue;
+  color: white;
+}
+button{
+  color: white;
+  background-color: skyblue;
+  cursor: pointer;
+}
+input{
+  border: 1px skyblue solid;
+  margin-left: 15px;
+}
+select{
+  border: 1px skyblue solid;
+  margin-left: 15px;
+}
+.content{
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+/* Mange-------------------------------------------------------- */
+.mange{
+  margin: 0 auto;
+}
+.mange p{
+  margin-right: 70%;
+  margin-top:10px;
+  margin-bottom: 50px;
+  font-size: 0.8rem;
+}
+.mange-regData{
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  gap: 50px;
+}
+.mange-regData>input{
+  width: 30px;
+}
+.regCar{
+  display: flex;
+  flex-direction: column;
+}
+
+.regCar>.mange-regData{
+  margin: auto;
+  margin-bottom: 30px;
+}
+.regCar>button{
+  width: 60px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  background-color: skyblue;
+  border: #eeeeee;
+  cursor: pointer;
+}
+
+
+.listCar>table{
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  
+}
+.listCar thead{
+  background-color: gray;
+  font-weight: bold;
+  border-bottom: 5px solid black;
+}
+.listCar tbody>:nth-child(odd){
+  background-color: #dddddd;
+}
+.listCar>table>tbody>tr>td:first-child{
+  width: 20%;
+}
+.listCar>table>tbody>tr>td:nth-child(2){
+  width: 40%;
+}
+.listCar>table>tbody>tr>td:nth-child(3){
+  width: 40%;
+}
+
+
+/* regForm------------------------------------------------------ */
+.regForm>div{
+  width: 100%;
+}
+.regForm input{
+  width: 60%;
+}
+.reg-second-div{
+  display: flex;
+  justify-content: space-around;
+}
+.reg-second-div select{
+  width: 150px;
+}
+.regForm{
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  text-align: center;
+}
+.regForm button{
+  margin: 0 auto;
+  width: 50px;
+}
+
+/* sales-------------------------------------------------------- */
+.sales-div{
+  margin: 0 auto;
+  width: 100%;
+}
+.sales-div>table{
+  margin: 0 auto;
+  border: 2px solid black;
+  text-align: center;
+  width: 70%;
+}
+.sales-div tr,td{
+  border: 2px solid black;
+}
+.sales-div>table>thead>tr:first-child{
+  font-size: 1.2rem;
+}
+.sales-div td{
+  padding: 30px
+}
+

@@ -1,26 +1,14 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import { getOne, getScore, updateOne } from "./apis"
 
 const ScoreReg = () =>{
   const navigate = useNavigate()
-  const params = useParams()
+  const {stuNum} = useParams()
 
   const[stu, setStu] = useState({})
 
-  // const[scores, setScores] = useState(
-  //   { stuNum : 0
-  //     , stuName:''
-  //     , korScore:stu.korScore
-  //     , engScore:stu.engScore
-  //     , mathScore:stu.mathScore}
-  // )
-
-  // function changeScore(e){
-  //   setScores({...scores,
-  //     [e.target.name] : e.target.value
-  //   })
-  // }
   function changeScore(e){
     setStu({...stu,
       [e.target.name] : e.target.value
@@ -28,8 +16,9 @@ const ScoreReg = () =>{
   }
 
   function regScore(){
-    axios
-    .put(`/regScore`, stu)
+    // axios
+    // .put('/regScore', stu)
+    updateOne(stu)
     .then((res)=>{
       navigate('/stuScore')
     })
@@ -38,10 +27,9 @@ const ScoreReg = () =>{
       console.log(error)
     })
   }
-
+  //성적 입력을 하려는 학생의 이름, 국,영,수 점수 조회
   useEffect(()=>{
-    axios
-    .get(`/oneStu/${params.stuNum}`)
+    getOne(stuNum)
     .then((res)=>{
       setStu(res.data)
     })
@@ -54,22 +42,22 @@ const ScoreReg = () =>{
     <>
       <h3>{stu.stuName}학생의 성적을 입력합니다</h3>
       <div>
-        국어:<input type="text" name="korScore" defaultValue={stu.korScore} onChange={(e)=>{
+        국어:<input type="text" name="korScore" value={stu.korScore} onChange={(e)=>{
           changeScore(e)
         }}></input>
       </div>
       <div>
-        영어:<input type="text" name="engScore" defaultValue={stu.engScore} onChange={(e)=>{
+        영어:<input type="text" name="engScore" value={stu.engScore} onChange={(e)=>{
           changeScore(e)
         }}></input>
       </div>
       <div>
-        수학:<input type="text" name="mathScore" defaultValue={stu.mathScore} onChange={(e)=>{
+        수학:<input type="text" name="mathScore" value={stu.mathScore} onChange={(e)=>{
           changeScore(e)
         }}></input>
       </div>
       <button type="button" onClick={()=>{
-        regScore(params.stuNum)
+        regScore(stuNum)
       }}>점수등록</button>
     </>
   )

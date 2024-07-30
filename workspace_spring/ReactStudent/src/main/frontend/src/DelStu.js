@@ -1,15 +1,13 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import {getStuList} from './apis'
 
 const DelStu = () => {
-  const navigate = useNavigate()
   const [stuList,setStuList] = useState([])
   
 
   useEffect(()=>{
-    axios
-    .get('/stuList')
+    getStuList()
     .then((res)=>{
       setStuList(res.data)
     })
@@ -22,7 +20,26 @@ const DelStu = () => {
     axios
     .delete(`/delStu/${stuNum}`)
     .then((res)=>{
-      window.location.reload()
+      alert('삭제완료')
+
+      //stuList 라는 STATE 변수의 값을 변경한다-> 재랜더링되면서 알아서 그림을 새롭게 그린다
+      //STATE 변수의 값을 state 변경 함수를 사용해서 변경
+
+      //데이터베이스에서 삭제한 학생 정보를 stuList 에서도 삭제
+      // stuList.forEach((stu, i)=>{
+      //   if(stu.stuNum == stuNum){
+      //     stuList.splice(i, 1)
+      //   }
+      // })
+
+      //위 코드를 람다식으로
+      //filter를 통해 걸러낸 삭제를 실행할 stu를 제외한 나머지를 선택
+      const result = stuList.filter((stu)=>{return stu.stuNum != stuNum})
+      
+
+      //setStuList([...stuList])
+      setStuList([...result])
+     
     })
     .catch((error)=>{
       alert('삭제실패')

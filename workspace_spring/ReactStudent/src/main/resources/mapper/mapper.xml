@@ -69,13 +69,13 @@
 
 	<!--학생 세부 성적 조회-->
     <select id="score" resultMap="student">
-        SELECT
-            STU_NUM
+        SELECT STU_NUM
+            , STU_NAME
             , KOR_SCORE
             , ENG_SCORE
             , MATH_SCORE
-        FROM
-            REACT_STUDENT
+        FROM REACT_STUDENT
+        WHERE STU_NUM = #{stuNum}
     </select>
 
     <!--학생 성적 수정-->
