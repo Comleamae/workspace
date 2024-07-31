@@ -1,7 +1,11 @@
 import axios from "axios"
-
-export const getBoardList = (searchData) =>{
-  const response = axios.post('/board/list', searchData)
+// 검색기능
+// export const getBoardList = (searchData) =>{
+//   const response = axios.post('/board/list', searchData)
+//   return response
+// }
+export const getBoardList = (pageNo) =>{
+  const response = axios.post('/board/list', {'pageNo':pageNo})
   return response
 }
 export const getBoardDetail = (boardNum)=>{

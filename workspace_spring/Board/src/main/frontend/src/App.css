@@ -57,3 +57,7 @@
   outline: 1px solid #FFB200;
   border: 1px solid #EEA100;
 }
+.page-span{
+  padding: 0 4px;
+  cursor: pointer;
+}

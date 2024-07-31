@@ -4,7 +4,10 @@ import * as boardApi from '../apis/boardApi';
 import { useNavigate } from "react-router-dom";
 
 const Main = (({onLogin})=>{
-  const [cnt, setCnt] = useState(0)
+  //자바에서 가져온 페이지 정보를 담을 변수
+  const [pageInfo, setPageInfo] = useState({})
+  //그림 그릴 페이지 숫자를 담을 배열
+  const [pageArr, setPageArr] = useState([])
   const [boardList, setBoardList] = useState([])
   const [searchData, setSearchData] = useState({
     searchType:'TITLE'
@@ -12,10 +15,21 @@ const Main = (({onLogin})=>{
   })
   const navigate = useNavigate()
 
+  
+
   useEffect(()=>{
-    boardApi.getBoardList(searchData)
+   // boardApi.getBoardList(searchData)
+    boardApi.getBoardList(1)
     .then((res)=>{
-      setBoardList(res.data)
+      setBoardList(res.data.boardList)
+      //함수형
+      setPageInfo(res.data.pageInfo)
+      // //map형
+      // const pageData = []
+      // for(let i = res.data.pageInfo.beginPage; i<res.data.pageInfo.endPage+1; i++){
+      //   pageData.push(i)
+      // }
+      // setPageArr(pageData)
     })
     .catch((error)=>{
       alert('실패함')
@@ -32,12 +46,36 @@ const Main = (({onLogin})=>{
   function searchOne(){
    boardApi.getBoardList(searchData)
    .then((res)=>{
-    setBoardList(res.data)
-    
+    setBoardList(res.data.boardList)
    })
    .catch((error)=>{}, [])
   }
-
+  //페이징 처리한 곳에서 숫자(페이지번호)를 클릭하면 다시 게시글을 조회
+  function getList(pageNo){
+    boardApi.getBoardList(pageNo)
+    .then((res)=>{
+      setBoardList(res.data.boardList)
+      setPageInfo(res.data.pageInfo) 
+    })
+    .catch((error)=>{}, [])
+  }
+ 
+  //페이징 그리기
+  //일반for문을 사용하지 못하기에 함수에 담아서 리턴 시키는 방식으로 사용
+  function drawPaginataion(){
+    const arr = []
+    if(pageInfo.prev){
+      arr.push(<span className="page-span" onClick={(e)=>{getList(pageInfo.beginPage-1)}}>이전</span>)
+    }
+    for(let i=pageInfo.beginPage; i<=pageInfo.endPage; i++){
+      arr.push(<span key={i} className="page-span" name="nowPage" onClick={(e)=>{getList(i)}}>{i}</span>)
+    }
+    if(pageInfo.next){
+      arr.push(<span className="page-span" onClick={(e)=>{getList(pageInfo.endPage+1)}}>다음</span>)    
+    }
+    return arr
+  }
+  
 
   return(
     <div className="board-list-container">
@@ -60,16 +98,19 @@ const Main = (({onLogin})=>{
          <thead>
           <tr>
             <td>NO</td>
+            <td>글번호</td>
             <td>제목</td>
             <td>작성자</td>
             <td>작성일</td>
           </tr>
          </thead>
           <tbody>
-            {   boardList.map((board, i)=>{
+            {   
+              boardList.map((board, i)=>{
                   return(
                     <tr key={i}>
                       <td>{boardList.length-i}</td>
+                      <td>{board.boardNum}</td>
                       <td>
                         <span onClick={(e)=>{navigate(`/detail/${board.boardNum}`)}}>{board.title}</span>
                       </td>
@@ -82,6 +123,7 @@ const Main = (({onLogin})=>{
           </tbody>
         </table>
       </div>
+      
       <div className="btn-div">
         {
           onLogin.memId != null
@@ -92,7 +134,13 @@ const Main = (({onLogin})=>{
         }
         
       </div>
-      
+      {/* 페이징 정보가 나오는 div */}
+      <div className="page-div">
+       {
+        //함수형
+        drawPaginataion()
+       }
+      </div>
     </div>
   )
 })
