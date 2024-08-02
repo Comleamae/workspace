@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Main = (({onLogin})=>{
   //자바에서 가져온 페이지 정보를 담을 변수
   const [pageInfo, setPageInfo] = useState({})
-  //그림 그릴 페이지 숫자를 담을 배열
+  //그림 그릴 페이지 숫자를 담을 배열(map)
   const [pageArr, setPageArr] = useState([])
   const [boardList, setBoardList] = useState([])
   const [searchData, setSearchData] = useState({

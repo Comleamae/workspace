@@ -20,7 +20,7 @@
             WHERE ${searchType} LIKE CONCAT('%', #{searchValue}, '%')
         </if>-->
         ORDER BY BOARD_NUM
-        LIMIT ${displayDataCnt} OFFSET ${displayDataCnt}*(${nowPage}-1)
+        LIMIT #{displayDataCnt} OFFSET #{offset}
     </select>
     <!--전체 게시물의 숫자 얻기-->
     <select id="getBoardCnt" resultType="int">

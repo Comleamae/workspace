@@ -1,0 +1,180 @@
+/* 
+  #C9DABF 제일 연한색
+  #9CA986
+  #808D7C
+  #5F6F65 제일 진한색
+*/
+.container{
+  width: 100vw;
+}
+.login-div{
+  width: 100%;
+  color: white;
+  background-color: black;
+  animation: slideDown 2s ease-in forwards;
+}
+.header-menu{
+  display: flex;
+  justify-content: end;
+  padding-right: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.header-menu span{
+  cursor: pointer;
+}
+.header-menu>li{
+  width: 100px;
+  text-align: center;
+}
+.banner-img{
+  width: 100%;
+  height: 200px;
+  /* 그림을 창에 맞춰 조절하는 기능 */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.banner{
+  position: relative;
+}
+.title-div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+  /* 글자 사이 간격 */
+  letter-spacing: 5px; 
+  /* 단어 사이 간격 */
+  word-spacing: 10px;
+  transform: translate(-50%, -50%);
+}
+.layout-div{
+  width: 80%;
+  margin: 0 auto;
+}
+/* ------------------ */
+/* -----공통디자인--------------- */
+/* input 태그 */
+.form-control{
+  width: 100%;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #9CA986;
+}
+.form-control::placeholder{
+  font-size: 0.7rem;
+  padding-left: 10px;
+}
+
+.form-control:focus{
+  outline: 1px solid #808D7C;
+}
+/* button */
+.btn{
+  padding: 7px 8px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-div{
+  text-align: center;
+  margin-top: 12px;
+}
+.btn-primary{
+  background-color: #C9DABF;
+  border: 1px solid #C9DABF;
+}
+
+.btn-primary:active{
+  background-color: #B0C9AE;
+}
+
+.btn-second{
+  background-color: #dddddd;
+  border: 1px solid #dddddd;
+}
+
+.btn-second:active{
+  background-color: #cccccc;
+}
+/* 모달창 디자인 */
+.modal-container{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color:rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  z-index: 99;
+  animation: fadeOut 0.5s ease-in forwards;
+}
+.modal-container.show{
+  animation-name: fadeIn;
+}
+.modal-container>.modal{
+  width: 500px;
+  background-color: white;
+  margin-top: 5rem;
+  padding: 20px;
+  border-radius: 15px;
+  animation: slideUp 0.5s ease-out forwards;
+}
+.modal-container.show>.modal{
+ animation-name: slideDown;
+}
+.modal-header{
+  text-align: right;
+  margin-bottom: 10px;
+}
+.modal-header>span{
+  cursor: pointer;
+}
+.modal-footer{
+  margin-top: 25px;
+  text-align: right;
+}
+
+/* 모달 애니메이션 정의 */
+@keyframes fadeIn{
+  from{
+    /* 선명도 */
+    opacity: 0; 
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes fadeOut{
+  from{
+    /* 선명도 */
+    opacity: 1; 
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+@keyframes slideDown{
+  from{
+    transform: translateY(-50px);
+
+  }
+  to{
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slideUp{
+  from{
+    transform: translateY(0);
+  }
+  to{
+    transform: translateY(-50px);
+  }
+}

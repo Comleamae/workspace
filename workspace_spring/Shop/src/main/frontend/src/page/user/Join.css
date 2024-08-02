@@ -1,0 +1,43 @@
+.join-div{
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: rgba(230, 230, 230, 0.1);
+  box-shadow: 5px 5px 6px #dddddd;
+}
+.join-table{
+  width: 100%;
+}
+
+.join-table td{
+  padding:6px;
+}
+
+.join-table tr>td:first-child{
+  text-align: right;
+}
+
+.inline-input{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.inline-input>input{
+  width: 70%;
+}
+.inline-input>button{
+  width: 30%;
+}
+.inline-select{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.inline-select>input{
+  width: 60%;
+}
+.inline-select>select{
+  width: 40%;
+}
