@@ -1,0 +1,16 @@
+.page-menu{
+  display: flex;
+  justify-content: center;
+}
+.page-menu>li{
+  padding: 20px;
+}
+.admin-main{
+  display: flex;
+}
+.admin-main>div:first-child{
+  width: 10%;
+}
+.admin-main>div:nth-child(2){
+  width: 90%;
+}

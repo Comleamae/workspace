@@ -10,5 +10,5 @@ public class ItemVO {
     private String itemIntro;
     private int itemStock;
     private String itemStatus;
-    private int cate_code;
+    private int cateCode;
 }

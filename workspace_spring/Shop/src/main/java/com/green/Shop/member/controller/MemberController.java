@@ -17,9 +17,11 @@ public class MemberController {
         return memberService.getLogin(memberVO);
     }
 
-    @GetMapping("/one/{memId}")
-    public MemberVO getOne(@PathVariable("memId") String memId){
-        return memberService.getOne(memId);
+    @GetMapping("/isEnableId/{memId}")
+    public boolean isEnableId(@PathVariable("memId") String memId){
+        //사용가능 id -> result:true
+        boolean result = memberService.isEnableId(memId);
+        return result;
     }
 
     @PostMapping("/join")

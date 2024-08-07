@@ -8,7 +8,8 @@ public interface MemberService {
     //모든 멤버
     List<MemberVO> getAllMem();
     //중복 검사를 위한 하나 얻기
-    MemberVO getOne(String memId);
+    // 사용가능 true/ 사용불가 false
+    boolean isEnableId(String memId);
     //로그인을 위한 하나 얻기
     MemberVO getLogin(MemberVO memberVO);
     //멤버 등록

@@ -19,14 +19,14 @@
         FROM SHOP_MEMBER
     </select>
     <!--하나씩 얻기-->
-    <select id="getOne" resultMap="member">
-        SELECT *
+    <select id="isEnableId" resultType="String">
+        SELECT MEM_ID
         FROM SHOP_MEMBER
         WHERE MEM_ID = #{memId}
     </select>
     <!--로그인 작업을 위한 하나빼기-->
     <select id="getLogin" resultMap="member">
-        SELECT *
+        SELECT MEM_ID, MEM_NAME, MEM_ROLE
         FROM SHOP_MEMBER
         WHERE MEM_ID = #{memId}
         AND MEM_PW = #{memPw}

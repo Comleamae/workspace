@@ -19,8 +19,10 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public MemberVO getOne(String memId) {
-        return sqlSession.selectOne("memberMapper.getOne", memId);
+    public boolean isEnableId(String memId) {
+        //사용 가능한 아이디면 selectedId:null
+        String selectedId = sqlSession.selectOne("memberMapper.isEnableId", memId);
+        return selectedId==null;
     }
 
     @Override

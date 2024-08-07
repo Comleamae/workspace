@@ -79,3 +79,51 @@ SELECT B.BOARD_NUM, REPLY_CONTENT, B.MEM_ID, REPLY_CONTENT, R.MEM_ID, REPLY_DATE
 FROM board B, board_reply R
 WHERE B.BOARD_NUM = R.BOARD_NUM
 ORDER BY BOARD_NUM DESC, REPLY_NUM DESC
+
+-- 아이디 중복 여부를 확인하는 쿼리
+SELECT MEM_ID
+FROM board_member
+WHERE MEM_ID = 'java'
+
+SELECT * FROM board
+SELECT * FROM board_member 
+SELECT * FROM board_reply 
+
+-- 아이디가 'java'인 회원이 작성한 게시글의 
+-- 글제목, 내용, 작성자id, 작성자명, 작성자 권한조회
+SELECT TITLE, CONTENT, B.MEM_ID, M.MEM_ID, M.MEM_NAME, M.MEM_ROLE
+FROM board B, board_member M
+WHERE B.MEM_ID = M.MEM_ID
+AND B.MEM_ID = 'java'
+
+-- 글 번호가 5번 이하인 게시글의 
+-- 글 번호, 제목, 글 작성자를 조회하되
+-- 글번호 기준 오름차순 정렬
+SELECT BOARD_NUM, TITLE, M.MEM_NAME
+FROM board B, board_member M
+WHERE B.MEM_ID = M.MEM_ID
+AND BOARD_NUM <= 31
+ORDER BY BOARD_NUM 
+
+-- 1번 게시글의 게시글 제목, 작성자 ID 및
+-- 1번 게시글에 작성된 댓글 내용, 댓글 작성자 ID 조회
+SELECT TITLE, B.MEM_ID, R.REPLY_CONTENT, R.MEM_ID
+FROM board B, board_reply R 
+WHERE B.BOARD_NUM = R.BOARD_NUM
+AND B.BOARD_NUM =1
+
+-- 1번 게시글의 게시글 제목, 작성자 ID 및
+-- 1번 게시글에 작성된 댓글 내용, 댓글 작성자 ID, 댓글 작성자 이름  조회
+SELECT TITLE, B.MEM_ID, R.REPLY_CONTENT, R.MEM_ID, M.MEM_NAME
+FROM board B, board_reply R, board_member M 
+WHERE B.BOARD_NUM = R.BOARD_NUM 
+AND R.MEM_ID = M.MEM_ID
+AND B.BOARD_NUM =1
+
+-- 게시글 :1,2,3,4 댓글: 1,2
+
+SELECT SALES_NAME, SALES_TEL, SALES_DATE
+	, COLOR, MODEL_NAME, PRICE
+FROM CAR_INFO C, SALES_INFO Bcar_info
+WHERE C.MODEL_NUM = B.MODEL_NUM
+sales_infosales_info
