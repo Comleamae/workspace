@@ -1,8 +1,0 @@
-.sub-menu{
-  display: flex;
-  flex-direction: column;
-}
-.sub-menu>li{
-  padding: 20px;
-  font-size: 0.8rem;
-}

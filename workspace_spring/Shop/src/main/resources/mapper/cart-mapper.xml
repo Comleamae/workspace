@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="cartMapper">
+
+    <resultMap id="cart" type="com.green.Shop.cart.vo.CartVO">
+        <id column="CART_CODE" property="cartCode"/>
+        <result column="CART_CNT" property="cartCnt"/>
+        <result column="CART_DATE" property="cartDate"/>
+        <result column="ITEM_CODE" property="itemCode"/>
+        <result column="MEM_ID" property="memId"/>
+        <association property="itemVO" resultMap="itemMapper.item"/>
+        <association property="memberVO" resultMap="memberMapper.member"/>
+    </resultMap>
+
+
+    <!--전체 아이템 리스트-->
+    <!--조회 시 조인, 서브쿼리 사용되면 조회한 데이터를 자바로 가져오기 위해-->
+    <!--정의한 resultMap 에 association 혹은 collection 을 추가해야함-->
+    <!--둘 중의 무엇을 쓸지는 테이블 간의 관계가 1대1/ 1대n 관계인지에 따라 결정-->
+    <!--테이블 관계라는 건 정답이 없다 어떤 테이블을 기준으로 삼는지에 따라 달라짐-->
+
+    <!--상품 테이블을 기준으로 이미지 테이블과 1:n 관계이다-->
+    <!--이렇게 결정한 테이블 간의 관계를 vo에 먼저 적용시켜준다-->
+    <!--이 관계를 resultMap 에도 맺어줘야 함-->
+
+
+    <!--장바구니 추가-->
+   <insert id="regCart">
+       INSERT INTO SHOP_CART
+       ( CART_CNT
+       , ITEM_CODE
+       , MEM_ID
+       )
+       VALUES
+       ( #{cartCnt}
+       , #{itemCode}
+       , #{memId}
+       )
+   </insert>
+
+    <!--장바구니 리스트-->
+    <select id="getMyCart" resultMap="cart">
+        SELECT CART_CODE, CART_CNT, SHOP_CART.MEM_ID, ITEM_NAME, ITEM_PRICE, IMG_CODE, ATTACHED_FILE_NAME, IS_MAIN
+            , SHOP_ITEM.ITEM_CODE, DATE_FORMAT(CART_DATE,"%Y-%m-%d %h:%i") AS CART_DATE
+        FROM SHOP_CART, SHOP_MEMBER, SHOP_ITEM, ITEM_IMG
+        WHERE SHOP_CART.MEM_ID=SHOP_MEMBER.MEM_ID
+        AND SHOP_CART.ITEM_CODE=SHOP_ITEM.ITEM_CODE
+        AND SHOP_ITEM.ITEM_CODE=ITEM_IMG.ITEM_CODE
+        AND SHOP_CART.MEM_ID = #{memId}
+    </select>
+
+    <!--장바구니에서 삭제-->
+    <delete id="deleteCart">
+        DELETE FROM SHOP_CART
+        WHERE CART_CODE = #{cartCode}
+    </delete>
+    <!--장바구니 품목 갯수 변경-->
+    <update id="updateCart">
+        UPDATE SHOP_CART
+        SET CART_CNT=#{cartCnt}
+        WHERE CART_CODE = #{cartCode}
+    </update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

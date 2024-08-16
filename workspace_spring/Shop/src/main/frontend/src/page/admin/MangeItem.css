@@ -1,0 +1,29 @@
+.mange-div>div>div{
+  padding-bottom: 10px;
+}
+.mange-div{
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: rgba(230, 230, 230, 0.1);
+  box-shadow: 3px 3px 6px #dddddd;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.in-div{
+  display: flex;
+}
+.mange-div>div>button{
+  margin-bottom: 20px;
+}
+
+.mange-div>div>:nth-child(4)>button{
+  margin-left: 10px;
+}
+.mange-one>img{
+  width: 100px;
+  height: 100px;
+}

@@ -1,16 +1,40 @@
 .page-menu{
   display: flex;
   justify-content: center;
+  gap: 60px;
 }
+
 .page-menu>li{
-  padding: 20px;
+  font-size: 1.2rem;
 }
-.admin-main{
+
+.page-menu>li{
+  cursor
+  : pointer;
+}
+.side-menu-div{
   display: flex;
+  margin-bottom: 50px;
 }
-.admin-main>div:first-child{
+
+/* 사이드바 디자인 */
+.side-menu-div>.sub-menu{
+  width: 250px;
+  box-shadow: 1px 1px 3px #eeeeee;
+  font-size: 1.0rem;
   width: 10%;
 }
-.admin-main>div:nth-child(2){
-  width: 90%;
+.sub-menu>li{
+  padding: 20px 16px;
+  border-bottom: 2px solid #003675;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub-menu>li>span{
+  cursor: pointer;
+}
+.bi-chevron-right{
+  color: #003675;
+  font-size: 0.9rem;
 }

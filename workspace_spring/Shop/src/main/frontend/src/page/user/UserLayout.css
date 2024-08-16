@@ -1,7 +1,14 @@
 .page-menu{
   display: flex;
   justify-content: center;
+  gap: 60px;
 }
+
 .page-menu>li{
-  padding: 20px;
+  font-size: 1.2rem;
+}
+
+.user-menu-div{
+  margin-top: 10px;
+  margin-bottom: 20px;
 }

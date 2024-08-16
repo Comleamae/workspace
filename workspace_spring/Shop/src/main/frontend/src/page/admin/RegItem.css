@@ -7,19 +7,32 @@
   box-shadow: 3px 3px 6px #dddddd;
 }
 
-.reg-item-div > .input-element{
+.input-element{
   margin-bottom: 16px;
+  margin: 0 auto;
 }
 
-.reg-item-div > .input-element > div:nth-child(1){
+/* .input-element > div:nth-child(1){
   margin-bottom: 10px;
-}
+} */
 
 .reg-item-div textarea.form-control{
   resize: none;
+}
+.reg-item-div .input-element{
+  width: 100%;
+}
+
+.input-title{
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .reg-item-div .btn-div{
   text-align: right;
 }
-
+.reg-item-div .file-div{
+  text-align: left;
+  
+  margin-top: 10px;
+}

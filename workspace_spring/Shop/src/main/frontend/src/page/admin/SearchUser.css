@@ -1,0 +1,11 @@
+.search-user-div{
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: rgba(230, 230, 230, 0.1);
+  box-shadow: 3px 3px 6px #dddddd;
+}
+table>thead>tr>td{
+  padding: 20px;
+}

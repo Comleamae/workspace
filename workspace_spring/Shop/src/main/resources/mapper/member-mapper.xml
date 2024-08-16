@@ -8,6 +8,7 @@
         <result column="MEM_PW" property="memPw"/>
         <result column="MEM_NAME" property="memName"/>
         <result column="POST" property="post"/>
+        <result column="MEM_TEL" property="memTel"/>
         <result column="MEM_ADDR" property="memAddr"/>
         <result column="ADDR_DETAIL" property="addrDetail"/>
         <result column="MEM_EMAIL" property="memEmail"/>

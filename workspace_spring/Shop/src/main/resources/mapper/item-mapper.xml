@@ -3,24 +3,62 @@
 
 <!-- 해당 파일에 모든 쿼리문을 작성 -->
 <mapper namespace="itemMapper">
+
 	<resultMap id="item" type="com.green.Shop.item.vo.ItemVO">
         <id column="ITEM_CODE" property="itemCode"/>
-        <result column="ITEM_NAME" property="itemName"/>
-        <result column="ITEM_PRICE" property="itemPrice"/>
-        <result column="ITEM_INTRO" property="itemIntro"/>
-        <result column="ITEM_STOCK " property="itemStock"/>
-        <result column="ITEM_STATUS" property="itemStatus"/>
-        <result column="CATE_CODE" property="cateCode"/>
+        <result column="ITEM_NAME"      property="itemName"/>
+        <result column="ITEM_PRICE"     property="itemPrice"/>
+        <result column="ITEM_INTRO"     property="itemIntro"/>
+        <result column="ITEM_STOCK "    property="itemStock"/>
+        <result column="ITEM_STATUS"    property="itemStatus"/>
+        <result column="CATE_CODE"      property="cateCode"/>
+        <collection property="imgList" resultMap="img"/>
     </resultMap>
+
     <resultMap id="category" type="com.green.Shop.item.vo.CategoryVO">
-                <id column="CATE_CODE" property="cateCode"/>
-                <result column="CATE_NAME" property="cateName"/>
+        <id column="CATE_CODE" property="cateCode"/>
+        <result column="CATE_NAME" property="cateName"/>
+    </resultMap>
+
+    <resultMap id="img" type="com.green.Shop.item.vo.ImgVO">
+        <id column="IMG_CODE" property="imgCode"/>
+        <result column="ORIGIN_FILE_NAME" property="originFileName"/>
+        <result column="ATTACHED_FILE_NAME" property="attachedFileName"/>
+        <result column="IS_MAIN" property="isMain"/>
+        <result column="ITEM_CODE" property="itemCode"/>
     </resultMap>
 
     <!--전체 아이템 리스트-->
+    <!--조회 시 조인, 서브쿼리 사용되면 조회한 데이터를 자바로 가져오기 위해-->
+    <!--정의한 resultMap 에 association 혹은 collection 을 추가해야함-->
+    <!--둘 중의 무엇을 쓸지는 테이블 간의 관계가 1대1/ 1대n 관계인지에 따라 결정-->
+    <!--테이블 관계라는 건 정답이 없다 어떤 테이블을 기준으로 삼는지에 따라 달라짐-->
+
+    <!--상품 테이블을 기준으로 이미지 테이블과 1:n 관계이다-->
+    <!--이렇게 결정한 테이블 간의 관계를 vo에 먼저 적용시켜준다-->
+    <!--이 관계를 resultMap 에도 맺어줘야 함-->
+
     <select id="getItemList" resultMap="item">
-                SELECT *
-                FROM SHOP_ITEM
+        SELECT ITEM.ITEM_CODE
+        , ITEM_NAME
+        , ITEM_PRICE
+        , IMG.ATTACHED_FILE_NAME
+        , CATE_CODE
+        FROM SHOP_ITEM ITEM, ITEM_IMG IMG
+        WHERE ITEM.ITEM_CODE = IMG.ITEM_CODE
+        AND IS_MAIN = 'Y'
+        <if test="cateCode!=0">
+            AND CATE_CODE = #{cate_code}
+        </if>
+        ORDER BY ITEM_CODE DESC
+    </select>
+
+    <!--아이템 상세 조회-->
+    <select id="itemDetail" resultMap="item">
+        SELECT ITEM.ITEM_CODE, ITEM_PRICE, IMG.ATTACHED_FILE_NAME, IMG.IS_MAIN, ITEM_INTRO, ITEM_NAME
+        FROM SHOP_ITEM ITEM, ITEM_IMG IMG
+        WHERE ITEM.ITEM_CODE = #{itemCode}
+        AND ITEM.ITEM_CODE = IMG.ITEM_CODE
     </select>
 
 </mapper>

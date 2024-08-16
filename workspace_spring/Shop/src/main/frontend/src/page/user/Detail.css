@@ -1,0 +1,81 @@
+.item-detail-div{
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: rgba(230, 230, 230, 0.1);
+  box-shadow: 3px 3px 6px #dddddd;
+  display: flex;
+  flex-direction: column;
+}
+.item-detail-div>div{
+  margin-bottom: 30px;
+}
+.detailHeader{
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  gap: 20px;
+  align-items: center;
+}
+.detailHeader>.mainImg{
+  border: 1px solid red;
+  width: 40%;
+}
+.mainImg>img{
+  width: 100%;
+  height: 100%;
+}
+.detailHeader>.info{
+  border: 1px solid black;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+}
+.info>h1{
+  width: 100%;
+}
+
+.item-cnt-div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+.item-cnt-div span{
+  width: 20%;
+}
+.item-cnt-div input{
+  width: 60%;
+}
+
+.btn-div{
+  display: flex;
+  gap: 10px;
+}
+.btn-div>button:nth-child(1){
+  width: 50%;
+}
+.btn-div>button:nth-child(2){
+  width: 50%;
+}
+.detailContent{
+  text-align: center;
+}
+.detailFooter{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.detailFooter img{
+  width: 100%;
+}
+.detailFooter>p{
+  padding: 8px;
+}

@@ -13,8 +13,14 @@ public class ItemController {
     @Resource(name = "itemService")
     private ItemServiceImpl itemService;
 
-    @GetMapping("/list")
-    List<ItemVO> getItemList(){
-        return itemService.getItemList();
+    @GetMapping("/list/{form}")
+    List<ItemVO> getItemList(@PathVariable("form") int cateCode){
+        return itemService.getItemList(cateCode);
     }
+
+    @GetMapping("/detail/{itemCode}")
+    ItemVO itemDetail(@PathVariable("itemCode") int itemCode){
+        return itemService.itemDetail(itemCode);
+    }
+
 }

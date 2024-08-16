@@ -79,10 +79,10 @@ const Login = ({loginInfo, setLoginInfo}) => {
   function handleBtn(){
     if(isLoginSuccess){//로그인 성공 시 확인 버튼 내용
       if(loginInfo.memRole == 'USER'){
-        navigate('/')
+        navigate('/list')
       }
       else if(loginInfo.memRole=='ADMIN'){
-        navigate('/admin/regItem')
+        navigate('/admin')
       }
     }
   }
