@@ -14,7 +14,14 @@ public class CartController {
 
     @PostMapping("/regCart")
     void regCart(@RequestBody CartVO cartVO){
-        cartService.regCart(cartVO);
+        //등록할 아이템이 이미 등록된 제품인가?
+        List<CartVO> earlyList = cartService.getMyCart(cartVO.getMemId());
+        if(earlyList==earlyList){
+            cartService.updateCart(cartVO);
+        }
+        else {
+            cartService.regCart(cartVO);
+        }
     }
 
     @GetMapping("/getMyCart/{memId}")

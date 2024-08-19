@@ -48,17 +48,17 @@ const MangeCategory = () => {
       {
         categoryList.map((category, i)=>{
           return(
-            <div key={i}>
+            <div className='cate-div' key={i}>
               <div>
                 {category.cateName}
-                <button type='button' onClick={(e)=>{deleteCategory(category.cateCode)}}>삭제</button>
+                <button type='button' className='btn btn-primary' onClick={(e)=>{deleteCategory(category.cateCode)}}>삭제</button>
               </div>
             </div>
           )
         })
       }
       <input type='text' name='cateName' onChange={(e)=>{changeData(e)}}/>
-      <button className='btn btn-primary' type='button' onClick={(e)=>{regCategory()}}>추가</button>
+      <div className='btn-div'><button className='btn btn-primary' type='button' onClick={(e)=>{regCategory()}}>추가</button></div>
     </div>
   )
 }

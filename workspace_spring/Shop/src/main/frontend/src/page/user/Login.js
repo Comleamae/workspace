@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Modal from '../../common/Modal'
+import './Login.css'
 
 const Login = ({loginInfo, setLoginInfo}) => {
   //로그인 버튼 클릭 시 화면에 보여지는 모달창의 상태
@@ -91,7 +92,7 @@ const Login = ({loginInfo, setLoginInfo}) => {
     <div className='login-page-div'>
       <h1>로그인 페이지</h1>
       <div>
-        <table>
+        <table className='login-page-table'>
           <tbody>
             <tr>
               <td>아이디</td>

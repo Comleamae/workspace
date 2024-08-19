@@ -1,17 +1,18 @@
-.mange-category-div{
-  width: 50%;
+.login-page-div{
+  width: 90%;
   margin: 0 auto;
   padding: 30px;
   border-radius: 10px;
   background-color: rgba(230, 230, 230, 0.1);
   box-shadow: 3px 3px 6px #dddddd;
-}
-.cate-div{
+  display: grid;
   text-align: center;
 }
-.cate-div>button{
-  margin: 20px;
+
+.login-page-table{
+  margin: 0 auto;
 }
+
 .btn-div{
   margin: 0 auto;
 }

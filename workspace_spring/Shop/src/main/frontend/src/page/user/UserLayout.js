@@ -34,6 +34,7 @@ const UserLayout = ({form, setForm}) => {
                 <li key={i}>
                   <span onClick={(e)=>{
                     setForm(cateOne.cateCode)
+                    navigate(`/list`)
                     console.log(form)
                     }}>{cateOne.cateName}</span>
                 </li>

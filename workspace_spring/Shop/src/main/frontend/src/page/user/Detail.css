@@ -21,6 +21,7 @@
 .detailHeader>.mainImg{
   border: 1px solid red;
   width: 40%;
+  height: 100%;
 }
 .mainImg>img{
   width: 100%;
